@@ -1,0 +1,277 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../media' as *;
+
+.footer {
+  position: relative;
+  padding: 200px 0 44px;
+  overflow: hidden;
+
+  @include tablet {
+    padding: 150px 0 32px;
+  }
+
+  @include mobile {
+    padding: 100px 0 24px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1275px;
+    height: 200px;
+    background: linear-gradient(180deg, rgba(133, 89, 254, 0.09) 0%, rgba(133, 89, 254, 0.02) 98%);
+    pointer-events: none;
+    z-index: 0;
+
+    @include tablet {
+      width: 100%;
+      height: 150px;
+    }
+
+    @include mobile {
+      height: 100px;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__logo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    top: -100%;
+    @include tablet {
+      margin-bottom: 48px;
+    }
+
+    @include mobile {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__logo-img {
+    width: 100%;
+    max-width: 1275px;
+    height: auto;
+
+    @include tablet {
+      max-width: 900px;
+    }
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 44px;
+    background: #F5F5F5;
+    border-radius: 24px;
+    z-index: 2;
+    position: relative;
+    @include tablet {
+      flex-direction: column;
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 32px;
+    }
+
+    @include mobile {
+      padding: 16px;
+      margin-bottom: 24px;
+      border-radius: 16px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 14px;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 327px;
+    height: 59px;
+    padding: 20px;
+    background: #F0F0F0;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all var(--transition-duration);
+
+    @include tablet {
+      width: 100%;
+    }
+
+    @include mobile {
+      height: auto;
+      min-height: 48px;
+      padding: 14px 16px;
+      border-radius: 12px;
+    }
+
+    &:hover {
+      background: #E8E8E8;
+      transform: translateY(-2px);
+    }
+  }
+
+  &__link-text {
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.17;
+    color: var(--color-dark);
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__link-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.2;
+    flex-shrink: 0;
+
+    @include mobile {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 16px;
+
+    @include tablet {
+      justify-content: center;
+    }
+
+    @include mobile {
+      gap: 12px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #EBEBEB;
+    border-radius: 50%;
+    transition: all var(--transition-duration);
+
+    @include mobile {
+      width: 40px;
+      height: 40px;
+    }
+
+    &:hover {
+      background: #E0E0E0;
+      transform: scale(1.05);
+    }
+  }
+
+  &__social-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+
+    @include mobile {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    @include mobile {
+      gap: 12px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    gap: 30px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
+  }
+
+  &__copyright {
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.17;
+    color: #2B2B2B;
+    opacity: 0.3;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__privacy {
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.17;
+    color: #2B2B2B;
+    opacity: 0.4;
+    text-decoration: none;
+    transition: opacity var(--transition-duration);
+
+    @include mobile {
+      font-size: 14px;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__credit {
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.17;
+    color: #2B2B2B;
+    opacity: 0.4;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+// Сначала загружаем миксины и переменные, т.к. они используются в других модулях
+@use 'mixins';
+@use 'media';
+@use 'variables';
+
+// Затем базовые стили
+@use 'normalize';
+@use 'fonts';
+@use 'globals';
+@use 'utils';
+
+// Блоки/Компоненты
+@use 'blocks/header';
+@use 'blocks/hero';
+@use 'blocks/digitalization';
+@use 'blocks/automation-tasks';
+@use 'blocks/implementation';
+@use 'blocks/pricing';
+@use 'blocks/testimonials';
+@use 'blocks/contact';
+@use 'blocks/footer';

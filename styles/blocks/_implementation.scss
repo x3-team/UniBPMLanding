@@ -1,0 +1,146 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../media' as *;
+
+.implementation {
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 72px;
+
+   
+  }
+
+  &__title {
+    max-width: 760px;
+    margin: 0;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 500;
+    @include fluid-text(48, 28);
+    line-height: 0.8;
+    letter-spacing: -0.02em;
+    text-align: center;
+    text-transform: lowercase;
+    color: var(--color-dark);
+
+    @include tablet {
+      max-width: 600px;
+    }
+
+    @include mobile {
+      max-width: 100%;
+      font-size: 28px;
+      line-height: 0.9;
+    }
+  }
+
+  &__steps {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 23px;
+    width: 100%;
+    max-width: 1114px;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+      gap: 100px;
+    }
+
+   
+  }
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    flex-shrink: 0;
+
+    @include tablet {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    @include mobile {
+      max-width: 100%;
+    }
+
+    &--large {
+      padding: 30px 24px;
+      background: var(--color-light);
+      border-radius: 20px;
+
+      @include tablet {
+        padding: 24px;
+      }
+
+      @include mobile {
+        padding: 20px 16px;
+      }
+    }
+  }
+
+  &__step-image {
+    margin-bottom: 24px;
+     &:first-child{
+         margin-bottom: 0;
+      }
+    @include mobile {
+      margin-bottom: 16px;
+
+     
+    }
+  }
+
+  &__step-img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 220px;
+    max-height: 240px;
+
+    &:first-child{
+      max-width: 260px;
+      top: -21px;
+      position: relative;
+    }
+
+    @include mobile {
+      max-height: 240px;
+    }
+  }
+
+  &__step-title {
+    margin: 0 0 12px 0;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    @include fluid-text(24, 20);
+    line-height: 1;
+    text-align: center;
+    color: var(--color-dark);
+
+    @include mobile {
+      font-size: 20px;
+      line-height: 1.1;
+    }
+  }
+
+  &__step-description {
+    margin: 0;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--color-dark);
+    opacity: 0.5;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,484 @@
+@use '../mixins';
+@use '../media';
+
+.digitalization {
+
+
+  &__container {
+    margin: 0 auto;
+    padding: 0 var(--container-padding-x);
+
+    @include media.mobile {
+      padding-inline: 20px;
+    }
+  }
+
+  &__title {
+    @include mixins.fluid-text(48, 28);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    text-align: center;
+    text-transform: lowercase;
+    color: var(--color-dark);
+    max-width: 660px;
+    margin: 0 auto 64px;
+
+    @include media.tablet {
+      margin-bottom: 48px;
+    }
+
+    @include media.mobile {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(60px, 81.5px));
+    grid-template-rows:
+      minmax(200px, 285px)
+      minmax(300px, 435px)
+      minmax(350px, 480px);
+    justify-content: center;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
+    @include media.tablet {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      grid-column-gap: 16px;
+      grid-row-gap: 16px;
+    }
+
+    @include media.mobile {
+      grid-template-columns: 1fr;
+      grid-column-gap: 0;
+      grid-row-gap: 12px;
+      padding: 0;
+    }
+  }
+
+  &__card {
+    position: relative;
+    border-radius: var(--border-radius-small);
+    padding: 32px;
+    overflow: hidden;
+    border: 1px solid #FBFBFB;
+
+    @include media.tablet {
+      min-height: 465px;
+    }
+
+    @include media.mobile {
+      padding: 32px 16px;
+      border-radius: 17.36px;
+      border-left: none;
+      border-right: none;
+      min-height: 442px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+    }
+
+    // Карточка 1: Автоматизируем рутинные процессы
+    &--automation {
+      grid-area: 1 / 1 / 3 / 5;
+      background: linear-gradient(207deg, rgba(147, 150, 255, 1) 42%, rgba(110, 58, 255, 1) 100%);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      justify-content: flex-start;
+      &__bg{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        right: 0px;
+        
+        &-image{
+          width: 100%;
+
+          &-mobile{
+            margin: 0 auto;
+        
+          }
+        }
+        
+        @include media.tablet {
+            @include mixins.visually-hidden;
+             
+         }
+
+        &-mobile{
+          @include media.tablet {
+             @include mixins.visually-visible();
+              position: absolute !important;
+              width: 100% !important;
+              bottom: 0px;
+              right: 0;
+              margin: 0 auto !important;
+          }
+
+        }
+      }
+     
+      @include media.tablet {
+        grid-area: auto;
+         background: linear-gradient(360deg, rgba(147, 150, 255, 1) 30%, rgba(110, 58, 255, 1) 100%);
+        
+      }
+
+      @include media.mobile {
+        grid-area: auto;
+      }
+    }
+
+    // Карточка 2: integration
+    &--integration{
+      background: linear-gradient(207deg, rgba(147, 150, 255, 1) 42%, rgba(110, 58, 255, 1) 100%);
+
+      grid-area: 1 / 5 / 2 / 13;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      justify-content: flex-start;
+      @include media.tablet {
+                 
+      }
+      &__bg{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        right: 0px;
+        bottom: 0px;
+    
+        @include media.tablet {
+            @include mixins.visually-hidden;
+             
+         }
+       &-mobile{
+          @include media.tablet {
+             @include mixins.visually-visible();
+              position: absolute !important;
+              width: 100% !important;
+              bottom: 0px;
+              right: 0;
+              margin: 0 auto !important;
+          }
+        }
+      }
+
+      &__bg-image{
+          width: 100%;
+
+          &-mobile{
+            margin: 0 auto;
+            width: 100%;
+          }
+        }
+
+      @include media.tablet {
+        grid-area: auto;
+      }
+
+      @include media.mobile {
+        grid-area: auto;
+      }
+    }
+ 
+
+    // Карточка 3: Роли и права
+    &--roles {
+      grid-area: 2 / 5 / 3 / 9;
+      background: #B5C2E9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+
+      &__bg{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        right: 0px;
+        bottom: 0px;
+         z-index: 2;
+        &-image{
+         margin: 0 auto;
+         width: 100%;
+       
+        
+          @include media.mobile {
+            @include mixins.responsive-image-width(58, 250,767,460 );
+          
+          }
+        }
+      }
+
+      @include media.tablet {
+        grid-area: auto;
+      }
+
+      @include media.mobile {
+        grid-area: auto;
+      }
+    }
+    // Карточка 4: Процессы
+    &--processes {
+      grid-area: 2 / 9 / 3 / 13;
+
+      background: #D2E7FD;
+
+      position: relative;
+       &__bg{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        right: 0px;
+        bottom: 0px;
+        z-index: 1;
+
+        &-image{
+         margin: 0 auto;
+         width: 90%;
+
+         @include media.mobile {
+            @include mixins.responsive-image-width(58, 230,767,460 );
+          
+          }
+        @include media.mobile-s {
+            width: 90%;
+          
+          }
+        }
+      }
+
+      @include media.tablet {
+        grid-area: auto;
+      }
+
+      @include media.mobile {
+        grid-area: auto;
+      }
+    }
+       // Карточка 5: BPMN
+    &--bpmn {
+      grid-area: 3 / 1 / 4 / 8;
+
+      background: #D2E7FD;
+
+      position: relative;
+
+       &__bg{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        right: 0px;
+        bottom: 0px;
+        z-index: 1;
+        @include media.mobile {
+          bottom: 20%;
+        }
+        &-image{
+          margin: 0 auto;
+          width: 100%;
+
+        
+        }
+      }
+
+      @include media.tablet {
+        grid-area: auto;
+      }
+
+      @include media.mobile {
+        grid-area: auto;
+        order: 1;
+        
+      }
+    }
+    
+
+    // Карточка 6: Масштабирование
+    &--scale {
+     grid-area: 3 / 8 / 4 / 13;
+      background: linear-gradient(207deg, rgba(147, 150, 255, 1) 42%, rgba(110, 58, 255, 1) 100%);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+
+
+       &__bg{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        right: 0px;
+        bottom: 0px;
+        z-index: 1;
+
+        &-image{
+          margin: 0 auto;
+          width: 100%;
+          @include media.mobile {
+            position: relative;
+            right:-20%;
+          }
+        }
+      }
+
+      @include media.tablet {
+        grid-area: auto;
+      }
+
+      @include media.mobile {
+        grid-area: auto;
+      }
+    }
+  }
+
+  &__card-content {
+    position: relative;
+    z-index: 2;
+
+    @include media.tablet {
+        margin: 0 auto;
+      }
+  }
+
+  &__card-title {
+    @include mixins.fluid-text(32, 24);
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 0 16px;
+    z-index: 4;
+
+    .digitalization__card--automation & {
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.6) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      max-width: 401px;
+      margin: 0 auto 24px;
+    }
+    .digitalization__card--integration & {
+      text-align: left;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.6) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      max-width: 380px;
+
+      @include media.tablet {
+          text-align: center;
+      }
+     
+    }
+
+    .digitalization__card--bpmn & {
+      color: #6FADEE;
+      text-transform: lowercase;
+       @include media.tablet{
+        text-align: center;
+      }
+    }
+
+    .digitalization__card--roles & {
+      color: var(--color-light);
+      text-transform: lowercase;
+      text-align: center;
+      @include mixins.fluid-text(32, 24);
+      line-height: 0.8;
+      margin-bottom: 24px;
+    }
+
+    .digitalization__card--processes & {
+      color: #6FADEE;
+      text-transform: lowercase;
+      @include mixins.fluid-text(32, 24);
+      @include media.tablet{
+        text-align: center;
+      }
+    }
+
+    .digitalization__card--scale & {
+      color: var(--color-light);
+      text-transform: lowercase;
+      text-align: center;
+      margin-top: 16px;
+      margin-bottom: 20px;
+       @include media.tablet{
+        text-align: center;
+      }
+    }
+  }
+
+  &__card-description {
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0;
+
+    .digitalization__card--automation & {
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      max-width: 383px;
+      margin: 0 auto;
+    }
+    .digitalization__card--integration & {
+      color: rgba(255, 255, 255, 0.6);
+      text-align: left;
+      max-width: 383px;
+      
+      @include media.mobile {
+          text-align: center;
+      }
+    }
+
+    .digitalization__card--bpmn & {
+      color: #6FADEE;
+      @include media.tablet {
+          text-align: center;
+      }
+    }
+
+    .digitalization__card--processes & {
+      color: #6FADEE;
+      @include media.tablet {
+          text-align: center;
+      }
+    }
+
+    .digitalization__card--scale & {
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      max-width: 372px;
+    }
+
+    &--centered {
+      text-align: center;
+      color: var(--color-light);
+      line-height: 1;
+      z-index: 4;
+    }
+  }
+
+  
+
+  // Иконка масштабирования
+  &__scale-icon {
+    margin-top: auto;
+    padding-top: 48px;
+  }
+}

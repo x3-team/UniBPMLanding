@@ -1,0 +1,364 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../media' as *;
+
+.pricing {
+  position: relative;
+
+  &__container {
+    position: relative;
+    padding: 120px 32px;
+    background: linear-gradient(225deg, #9396FF 0%, #6E3AFF 100%);
+    border-radius: 48px;
+    overflow: hidden;
+
+    @include tablet {
+      padding: 80px 24px;
+      border-radius: 32px;
+    }
+
+    @include mobile {
+      padding: 60px 16px;
+      border-radius: 24px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../images/price/pricing-bg.svg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.6;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    max-width: 636px;
+    margin: 0 auto 72px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 500;
+    @include fluid-text(48, 28);
+    line-height: 0.8;
+    letter-spacing: -0.02em;
+    text-align: center;
+    text-transform: lowercase;
+    color: var(--color-light);
+
+    @include tablet {
+      margin-bottom: 56px;
+    }
+
+    @include mobile {
+      margin-bottom: 40px;
+      font-size: 28px;
+      line-height: 0.9;
+    }
+  }
+
+  &__plans {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 64px;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__plan {
+    width: 562px;
+    padding: 32px;
+    border-radius: 40px;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+
+    @include tablet {
+      width: 100%;
+      max-width: 562px;
+    }
+
+    @include mobile {
+      padding: 24px;
+      border-radius: 32px;
+    }
+
+    &--community {
+      background: #756FE6;
+    }
+
+    &--enterprise {
+      background: var(--color-light);
+    }
+  }
+
+  &__plan-header {
+    margin-bottom: 32px;
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__plan-title {
+    margin: 0 0 20px 0;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 500;
+    @include fluid-text(48, 32);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    text-transform: capitalize;
+
+    @include mobile {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .pricing__plan--community & {
+      color: var(--color-light);
+    }
+
+    .pricing__plan--enterprise & {
+      color: var(--color-dark);
+    }
+  }
+
+  &__plan-description {
+    margin: 0;
+    max-width: 339px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+
+    @include mobile {
+      font-size: 16px;
+    }
+
+    .pricing__plan--community & {
+      color: var(--color-light);
+    }
+
+    .pricing__plan--enterprise & {
+      color: var(--color-dark);
+    }
+  }
+
+  &__plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 48px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include mobile {
+      margin-bottom: 32px;
+      gap: 16px;
+    }
+  }
+
+  &__plan-feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__plan-feature-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  &__plan-feature-text {
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1;
+    text-transform: lowercase;
+
+    @include mobile {
+      font-size: 18px;
+    }
+
+    .pricing__plan--community & {
+      color: var(--color-light);
+    }
+
+    .pricing__plan--enterprise & {
+      color: #7F64FF;
+    }
+  }
+
+  &__plan-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include mobile {
+      gap: 32px;
+    }
+  }
+
+  &__plan-price {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__plan-price-label {
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 2;
+    text-transform: uppercase;
+    opacity: 0.3;
+
+    @include mobile {
+      font-size: 14px;
+    }
+
+    .pricing__plan--community & {
+      color: var(--color-light);
+    }
+
+    .pricing__plan--enterprise & {
+      color: var(--color-dark);
+    }
+  }
+
+  &__plan-price-value {
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 500;
+    @include fluid-text(36, 28);
+    line-height: 1.11;
+    letter-spacing: -0.02em;
+
+    @include mobile {
+      font-size: 32px;
+    }
+
+    .pricing__plan--community & {
+      color: var(--color-light);
+    }
+
+    .pricing__plan--enterprise & {
+      color: var(--color-dark);
+    }
+  }
+
+  &__plan-button {
+    padding: 14px 29px;
+    border-radius: 40px;
+    text-align: center;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.17;
+    text-decoration: none;
+    transition: all var(--transition-duration);
+
+    @include mobile {
+      padding: 12px 24px;
+      font-size: 14px;
+    }
+
+    .pricing__plan--community & {
+      background: var(--color-light);
+      color: #7953FF;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.9);
+      }
+    }
+
+    .pricing__plan--enterprise & {
+      background: var(--color-dark);
+      color: var(--color-light);
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.8);
+      }
+    }
+  }
+
+  &__stats {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+
+    @include tablet {
+      gap: 40px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 303px;
+
+    @include mobile {
+      max-width: 100%;
+      gap: 16px;
+    }
+  }
+
+  &__stat-value {
+    margin: 0;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    @include fluid-text(36, 28);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--color-light);
+
+    @include mobile {
+      font-size: 32px;
+    }
+  }
+
+  &__stat-divider {
+    width: 100%;
+    height: 0.9px;
+    background: var(--color-gray);
+    opacity: 0.4;
+  }
+
+  &__stat-label {
+    margin: 0;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    color: var(--color-light);
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}

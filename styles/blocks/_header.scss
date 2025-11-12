@@ -1,0 +1,264 @@
+@use '../mixins';
+@use '../media';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--color-light);
+  padding: 32px 0;
+  transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+
+  @include media.tablet {
+    padding: 20px 0;
+  }
+
+  @include media.mobile {
+    padding: 16px 0;
+  }
+
+  // Состояние при скролле - добавляет тень
+  &--scrolled {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  // Скрытое состояние
+  &--hidden {
+    transform: translateY(-100%);
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @include media.mobile {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  &__logo {
+    @include mixins.reset-link;
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      height: auto;
+    }
+
+    @include media.tablet {
+      img {
+        width: 120px;
+        height: auto;
+      }
+    }
+
+    @include media.mobile {
+      img {
+        width: 100px;
+      }
+    }
+  }
+
+  &__nav {
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media.tablet {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__menu-item {
+    //
+  }
+
+  &__menu-link {
+    @include mixins.reset-link;
+    font-family: var(--font-family-base);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.17;
+    color: #000000;
+    opacity: 0.6;
+    transition: opacity var(--transition-duration) ease;
+
+    @include media.hover {
+      opacity: 1;
+    }
+  }
+
+  &__lang {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    margin-top: 9px;
+    @include media.mobile {
+      display: none;
+    }
+  }
+
+  &__lang-label {
+    font-family: var(--font-family-base);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.016em;
+    color: #1D1D1F;
+  }
+
+  &__lang-selector {
+    font-family: var(--font-family-base);
+    @include mixins.reset-button;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.016em;
+    color: #1D1D1F;
+    transition: opacity var(--transition-duration) ease;
+
+    @include media.hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__lang-current {
+    //
+  }
+
+  &__lang-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+
+    @include media.tablet {
+      display: none;
+    }
+  }
+
+  &__mobile-actions {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+
+    @include media.tablet {
+      display: flex;
+    }
+  }
+
+  &__download {
+    @include mixins.reset-link;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-family-base);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.17;
+    color: #000000;
+    transition: opacity var(--transition-duration) ease;
+
+    @include media.hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__download-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+
+  &__button {
+    @include mixins.reset-link;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    background-color: #7242FF;
+    border-radius: var(--border-radius-large);
+    font-family: var(--font-family-base);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.17;
+    color: var(--color-light);
+    transition: background-color var(--transition-duration) ease;
+    white-space: nowrap;
+
+    @include media.hover {
+      background-color: #5E35CC;
+    }
+
+    &:active {
+      background-color: #4A2AA3;
+    }
+
+    @include media.mobile {
+      display: inline-flex;
+      padding: 7px 10px;
+      font-family: 'Roboto Flex', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.17;
+      border-radius: 40px;
+    }
+  }
+
+  &__burger {
+    @include mixins.reset-button;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    background-color: #ECEBEE;
+    border-radius: 999px;
+    flex-shrink: 0;
+
+    @include media.tablet {
+      display: flex;
+    }
+
+    span {
+      display: block;
+      width: 10px;
+      height: 1px;
+      background-color: #000000;
+      border-radius: 0;
+      transition: transform var(--transition-duration) ease, opacity var(--transition-duration) ease;
+    }
+
+    @include media.hover {
+      opacity: 0.7;
+    }
+  }
+}

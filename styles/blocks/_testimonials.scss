@@ -1,0 +1,198 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../media' as *;
+
+.testimonials {
+  
+
+  &__container {
+    max-width: var(--container-width);
+    padding: 0 var(--container-padding-x);
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin: 0 0 72px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 500;
+    @include fluid-text(48, 28);
+    line-height: 0.8;
+    letter-spacing: -0.02em;
+    text-align: center;
+    text-transform: lowercase;
+    color: var(--color-dark);
+
+    @include tablet {
+      margin-bottom: 56px;
+    }
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 80px;
+
+    @include mobile {
+      padding-bottom: 60px;
+    }
+  }
+
+  &__track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.5s ease;
+    will-change: transform;
+
+    @include mobile {
+      gap: 16px;
+    }
+  }
+
+  &__card {
+    flex: 0 0 410px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 544px;
+    padding: 30px;
+    background: #F5F5F5;
+    border-radius: var(--border-radius);
+
+    @include tablet {
+      flex: 0 0 350px;
+      min-height: 480px;
+      padding: 24px;
+    }
+
+    @include mobile {
+      flex: 0 0 calc(100vw - 64px);
+      min-height: 420px;
+      padding: 20px;
+    }
+  }
+
+  &__text {
+    margin: 0 0 auto;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.1;
+    text-transform: lowercase;
+    color: var(--color-dark);
+
+    @include tablet {
+      font-size: 28px;
+    }
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__author {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+
+    @include mobile {
+      margin-top: 24px;
+    }
+  }
+
+  &__avatar {
+    flex-shrink: 0;
+    width: 54px;
+    height: 66px;
+    object-fit: cover;
+
+    @include mobile {
+      width: 48px;
+      height: 58px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__name {
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.17;
+    color: var(--color-dark);
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  &__company {
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.17;
+    color: var(--color-dark);
+    opacity: 0.5;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  &__nav-button {
+    @include reset-button;
+    @include flex-center;
+    width: 42px;
+    height: 42px;
+    background: #F5F5F5;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--transition-duration);
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: var(--color-dark);
+      transition: color var(--transition-duration);
+    }
+
+    @include hover {
+      background: var(--color-dark);
+
+      svg {
+        color: var(--color-light);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    @include mobile {
+      width: 36px;
+      height: 36px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

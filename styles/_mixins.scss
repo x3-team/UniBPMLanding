@@ -1,0 +1,77 @@
+@mixin fluid-text($max: 48, $min: 16) {
+  font-size: clamp(#{$min}px, calc($max / 1440 * 100vw), #{$max}px);
+}
+
+@mixin reset-link {
+  color: inherit;
+
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin reset-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else  {
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin square($size) {
+  width: $size;
+  aspect-ratio: 1;
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@mixin visually-visible {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: normal !important;
+  clip-path: none !important;
+  clip: auto !important;
+  overflow: visible !important;
+}
+
+// Адаптивная ширина изображения - увеличивается на меньших экранах
+// $min - минимальная ширина на больших экранах (%)
+// $max - максимальная ширина на маленьких экранах (%)
+// $viewport-max - макс. ширина экрана (по умолчанию 1440px)
+// $viewport-min - мин. ширина экрана (по умолчанию 320px)
+@mixin responsive-image-width($min: 100, $max: 150, $viewport-max: 1440, $viewport-min: 320) {
+  $min-width: calc($min * 1%);
+  $max-width: calc($max * 1%);
+  width: clamp($min-width, calc($min-width + ($max - $min) * ((100vw - #{$viewport-max}px) / ($viewport-min - $viewport-max))), $max-width);
+}
