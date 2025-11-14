@@ -95,7 +95,7 @@
     border-radius: 40px;
     color: var(--color-light);
     font-family: var(--font-family-base);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 12px;
     line-height: 1.17;
     width: fit-content;
@@ -108,7 +108,7 @@
   &__title {
     margin: 0;
     font-family: var(--font-family-base);
-    font-weight: 500;
+    font-weight: 600;
     @include mixins.fluid-text(48, 28);
     line-height: 0.8;
     letter-spacing: -0.02em;

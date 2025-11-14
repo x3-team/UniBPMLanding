@@ -7,7 +7,7 @@
 
   &__container {
     position: relative;
-    padding: 120px 32px;
+    padding: 120px 115px;
     background: linear-gradient(225deg, #9396FF 0%, #6E3AFF 100%);
     border-radius: 48px;
     overflow: hidden;
@@ -68,7 +68,7 @@
 
   &__plans {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 24px;
     margin-bottom: 64px;
 
@@ -267,14 +267,13 @@
   }
 
   &__plan-button {
-    padding: 14px 29px;
+    padding: 20px 29px;
     border-radius: 40px;
     text-align: center;
     font-family: 'Roboto Flex', sans-serif;
     font-weight: 600;
     font-size: 16px;
-    line-height: 1.17;
-    text-decoration: none;
+   
     transition: all var(--transition-duration);
 
     @include mobile {
@@ -303,7 +302,7 @@
 
   &__stats {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 64px;
 
     @include tablet {

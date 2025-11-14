@@ -6,7 +6,7 @@
   position: relative;
   padding: 200px 0 44px;
   overflow: hidden;
-
+  background-color: #F8F8F8 ;
   @include tablet {
     padding: 150px 0 32px;
   }
@@ -23,7 +23,6 @@
     transform: translateX(-50%);
     width: 1275px;
     height: 200px;
-    background: linear-gradient(180deg, rgba(133, 89, 254, 0.09) 0%, rgba(133, 89, 254, 0.02) 98%);
     pointer-events: none;
     z-index: 0;
 
@@ -77,7 +76,7 @@
     align-items: center;
     padding: 20px;
     margin-bottom: 44px;
-    background: #F5F5F5;
+    background: var(--color-light);
     border-radius: 24px;
     z-index: 2;
     position: relative;

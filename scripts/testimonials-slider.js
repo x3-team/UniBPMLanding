@@ -3,17 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!slider) return;
 
   const track = slider.querySelector('.testimonials__track');
-  const cards = Array.from(track.querySelectorAll('.testimonials__card'));
+  const cards = Array.from(track.querySelectorAll('.testimonials__card:not([data-clone])'));
   const prevButton = slider.querySelector('.testimonials__nav-button--prev');
   const nextButton = slider.querySelector('.testimonials__nav-button--next');
 
   if (!track || cards.length === 0) return;
 
-  // Количество реальных слайдов (без клонов)
-  const realSlidesCount = cards.length - 2; // У нас 5 карточек: 1 клон + 3 оригинала + 1 клон
-
-  // Начинаем с первого оригинального слайда (индекс 1, т.к. 0 - это клон)
-  let currentIndex = 1;
+  // Текущий индекс (начинаем с 0)
+  let currentIndex = 0;
   let isAnimating = false;
 
   // Получаем ширину карточки + gap
@@ -21,6 +18,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = cards[0];
     const gap = parseInt(getComputedStyle(track).gap) || 24;
     return card.offsetWidth + gap;
+  };
+
+  // Обновляем состояние кнопок
+  const updateButtonsState = () => {
+    if (prevButton) {
+      if (currentIndex === 0) {
+        prevButton.disabled = true;
+        prevButton.style.opacity = '0.5';
+        prevButton.style.cursor = 'not-allowed';
+      } else {
+        prevButton.disabled = false;
+        prevButton.style.opacity = '1';
+        prevButton.style.cursor = 'pointer';
+      }
+    }
+
+    if (nextButton) {
+      if (currentIndex >= cards.length - 1) {
+        nextButton.disabled = true;
+        nextButton.style.opacity = '0.5';
+        nextButton.style.cursor = 'not-allowed';
+      } else {
+        nextButton.disabled = false;
+        nextButton.style.opacity = '1';
+        nextButton.style.cursor = 'pointer';
+      }
+    }
   };
 
   // Обновляем позицию слайдера
@@ -35,52 +59,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     track.style.transform = `translateX(${offset}px)`;
+    updateButtonsState();
   };
 
   // Переход к следующему слайду
   const goToNext = () => {
-    if (isAnimating) return;
+    if (isAnimating || currentIndex >= cards.length - 1) return;
     isAnimating = true;
 
     currentIndex++;
     updateSliderPosition(true);
 
-    // Если дошли до клона в конце (индекс 4 = последний клон)
-    if (currentIndex === cards.length - 1) {
-      setTimeout(() => {
-        // Моментально перематываем на первый оригинальный слайд (индекс 1)
-        currentIndex = 1;
-        updateSliderPosition(false);
-        isAnimating = false;
-      }, 500); // Ждем окончания анимации
-    } else {
-      setTimeout(() => {
-        isAnimating = false;
-      }, 500);
-    }
+    setTimeout(() => {
+      isAnimating = false;
+    }, 500);
   };
 
   // Переход к предыдущему слайду
   const goToPrev = () => {
-    if (isAnimating) return;
+    if (isAnimating || currentIndex === 0) return;
     isAnimating = true;
 
     currentIndex--;
     updateSliderPosition(true);
 
-    // Если дошли до клона в начале (индекс 0 = первый клон)
-    if (currentIndex === 0) {
-      setTimeout(() => {
-        // Моментально перематываем на последний оригинальный слайд (индекс 3)
-        currentIndex = realSlidesCount;
-        updateSliderPosition(false);
-        isAnimating = false;
-      }, 500); // Ждем окончания анимации
-    } else {
-      setTimeout(() => {
-        isAnimating = false;
-      }, 500);
-    }
+    setTimeout(() => {
+      isAnimating = false;
+    }, 500);
   };
 
   // Обработчики событий
@@ -129,6 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Инициализация - начинаем с первого оригинального слайда
+  // Инициализация
   updateSliderPosition(false);
 });

@@ -297,6 +297,12 @@ section {
   }
 }
 
+@media (max-width: 1023px) {
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
 @media (min-width: 768px) {
   .visible-mobile {
     display: none !important;
@@ -691,7 +697,7 @@ section {
   border-radius: 40px;
   color: var(--color-light);
   font-family: var(--font-family-base);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
   width: -moz-fit-content;
@@ -705,7 +711,7 @@ section {
 .hero__title {
   margin: 0;
   font-family: var(--font-family-base);
-  font-weight: 500;
+  font-weight: 600;
   font-size: clamp(28px, 3.3333333333vw, 48px);
   line-height: 0.8;
   letter-spacing: -0.02em;
@@ -974,7 +980,6 @@ section {
   line-height: 0.9;
   letter-spacing: -0.02em;
   text-align: center;
-  text-transform: lowercase;
   color: var(--color-dark);
   max-width: 660px;
   margin: 0 auto 64px;
@@ -1337,7 +1342,7 @@ section {
   z-index: 4;
 }
 .digitalization__card--automation .digitalization__card-title {
-  text-align: center;
+  text-align: left;
   background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.6) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1360,7 +1365,6 @@ section {
 }
 .digitalization__card--bpmn .digitalization__card-title {
   color: #6FADEE;
-  text-transform: lowercase;
 }
 @media (max-width: 1023px) {
   .digitalization__card--bpmn .digitalization__card-title {
@@ -1369,7 +1373,6 @@ section {
 }
 .digitalization__card--roles .digitalization__card-title {
   color: var(--color-light);
-  text-transform: lowercase;
   text-align: center;
   font-size: clamp(24px, 2.2222222222vw, 32px);
   line-height: 0.8;
@@ -1377,7 +1380,6 @@ section {
 }
 .digitalization__card--processes .digitalization__card-title {
   color: #6FADEE;
-  text-transform: lowercase;
   font-size: clamp(24px, 2.2222222222vw, 32px);
 }
 @media (max-width: 1023px) {
@@ -1387,7 +1389,6 @@ section {
 }
 .digitalization__card--scale .digitalization__card-title {
   color: var(--color-light);
-  text-transform: lowercase;
   text-align: center;
   margin-top: 16px;
   margin-bottom: 20px;
@@ -1404,7 +1405,7 @@ section {
 }
 .digitalization__card--automation .digitalization__card-description {
   color: rgba(255, 255, 255, 0.6);
-  text-align: center;
+  text-align: left;
   max-width: 383px;
   margin: 0 auto;
 }
@@ -1776,7 +1777,7 @@ section {
 }
 .pricing__container {
   position: relative;
-  padding: 120px 32px;
+  padding: 120px 115px;
   background: linear-gradient(225deg, #9396FF 0%, #6E3AFF 100%);
   border-radius: 48px;
   overflow: hidden;
@@ -1837,7 +1838,7 @@ section {
 }
 .pricing__plans {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 24px;
   margin-bottom: 64px;
 }
@@ -2023,14 +2024,12 @@ section {
   color: var(--color-dark);
 }
 .pricing__plan-button {
-  padding: 14px 29px;
+  padding: 20px 29px;
   border-radius: 40px;
   text-align: center;
   font-family: "Roboto Flex", sans-serif;
   font-weight: 600;
   font-size: 16px;
-  line-height: 1.17;
-  text-decoration: none;
   transition: all var(--transition-duration);
 }
 @media (max-width: 767px) {
@@ -2055,7 +2054,7 @@ section {
 }
 .pricing__stats {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 64px;
 }
 @media (max-width: 1023px) {
@@ -2319,6 +2318,7 @@ section {
 
 .contact {
   padding: var(--section-padding-y) 0;
+  background-color: #F8F8F8;
 }
 .contact__container {
   display: flex;
@@ -2327,8 +2327,9 @@ section {
 .contact__form-wrapper {
   width: 454px;
   padding: 20px;
-  background: #F5F5F5;
+  background: var(--color-light);
   border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 1023px) {
   .contact__form-wrapper {
@@ -2355,19 +2356,30 @@ section {
   }
 }
 .contact__badge {
+  position: relative;
   display: inline-flex;
   padding: 6px 10px;
   background: rgba(110, 58, 255, 0.05);
-  border: 1px solid transparent;
-  -o-border-image: linear-gradient(90deg, #6E3AFF 0%, rgba(110, 58, 255, 0.55) 100%) 1;
-     border-image: linear-gradient(90deg, #6E3AFF 0%, rgba(110, 58, 255, 0.55) 100%) 1;
-  border-radius: 40px;
+  border-radius: var(--border-radius-large);
   font-family: "Roboto Flex", sans-serif;
   font-weight: 600;
   font-size: 12px;
   line-height: 1.17;
   text-align: center;
   color: #6E3AFF;
+  z-index: 1;
+}
+.contact__badge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #6E3AFF 0%, rgba(110, 58, 255, 0.55) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 @media (max-width: 767px) {
   .contact__badge {
@@ -2392,6 +2404,9 @@ section {
     font-size: 24px;
     line-height: 0.9;
   }
+}
+.contact__title-gray {
+  color: #A3A3A3;
 }
 .contact__form {
   display: flex;
@@ -2557,6 +2572,7 @@ section {
   position: relative;
   padding: 200px 0 44px;
   overflow: hidden;
+  background-color: #F8F8F8;
 }
 @media (max-width: 1023px) {
   .footer {
@@ -2576,7 +2592,6 @@ section {
   transform: translateX(-50%);
   width: 1275px;
   height: 200px;
-  background: linear-gradient(180deg, rgba(133, 89, 254, 0.09) 0%, rgba(133, 89, 254, 0.02) 98%);
   pointer-events: none;
   z-index: 0;
 }
@@ -2633,7 +2648,7 @@ section {
   align-items: center;
   padding: 20px;
   margin-bottom: 44px;
-  background: #F5F5F5;
+  background: var(--color-light);
   border-radius: 24px;
   z-index: 2;
   position: relative;

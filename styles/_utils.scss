@@ -16,6 +16,11 @@
     display: none !important;
   }
 }
+.hidden-tablet {
+  @include media.tablet {
+    display: none !important;
+  }
+}
 
 .visible-mobile {
   @include media.mobile-above {
