@@ -201,33 +201,81 @@
             <h2 class="automation-tasks__title">Оцифруем и автоматизируем любые задачи, которые требуют включения сотрудников</h2>
 
             <div class="automation-tasks__content">
-                <div class="automation-tasks__steps">
-                    <div class="automation-tasks__step automation-tasks__step--inactive hidden-mobile">
-                        <div class="automation-tasks__step-text">провести скоринг</div>
+                <div class="automation-tasks__accordion">
+                    <!-- Аккордеон пункт 1 -->
+                    <div class="automation-tasks__item">
+                        <button class="automation-tasks__item-header" data-accordion-trigger data-image="1">
+                            <h3 class="automation-tasks__item-title">Смоделировать процессы</h3>
+                        </button>
+                        <div class="automation-tasks__item-body">
+                            <p class="automation-tasks__item-description">
+                                [Текст описания для провести скоринг - заглушка]
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="automation-tasks__step automation-tasks__step--active">
-                        <h3 class="automation-tasks__step-title">Подготовить вводные</h3>
-                        <p class="automation-tasks__step-description">
-                            Сотрудники экономят до 40% времени за счет алгоритма, который сделает за них всю рутину — останется только принять результат
-                        </p>
+                    <!-- Аккордеон пункт 2 (активный по умолчанию) -->
+                    <div class="automation-tasks__item automation-tasks__item--active">
+                        <button class="automation-tasks__item-header" data-accordion-trigger data-image="2">
+                            <h3 class="automation-tasks__item-title">Подключение интеграции к ИИ</h3>
+                        </button>
+                        <div class="automation-tasks__item-body">
+                            <p class="automation-tasks__item-description">
+                                Сотрудники экономят до 40% времени за счет алгоритма, который сделает за них всю рутину — останется только принять результат
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="automation-tasks__step automation-tasks__step--inactive hidden-mobile">
-                        <div class="automation-tasks__step-text">сформировать выводы</div>
+                    <!-- Аккордеон пункт 3 -->
+                    <div class="automation-tasks__item">
+                        <button class="automation-tasks__item-header" data-accordion-trigger data-image="3">
+                            <h3 class="automation-tasks__item-title">Добавить людей</h3>
+                        </button>
+                        <div class="automation-tasks__item-body">
+                            <p class="automation-tasks__item-description">
+                                [Текст описания для сформировать выводы - заглушка]
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="automation-tasks__step automation-tasks__step--inactive hidden-mobile">
-                        <div class="automation-tasks__step-text">предложить стратегию</div>
+                    <!-- Аккордеон пункт 4 -->
+                    <div class="automation-tasks__item">
+                        <button class="automation-tasks__item-header" data-accordion-trigger data-image="4">
+                            <h3 class="automation-tasks__item-title">Исполнять процессы</h3>
+                        </button>
+                        <div class="automation-tasks__item-body">
+                            <p class="automation-tasks__item-description">
+                                [Текст описания для предложить стратегию - заглушка]
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="automation-tasks__step automation-tasks__step--inactive hidden-mobile">
-                        <div class="automation-tasks__step-text">подсветить проблемы</div>
+                    <!-- Аккордеон пункт 5 -->
+                    <div class="automation-tasks__item">
+                        <button class="automation-tasks__item-header" data-accordion-trigger data-image="5">
+                            <h3 class="automation-tasks__item-title">Управлять исполнением</h3>
+                        </button>
+                        <div class="automation-tasks__item-body">
+                            <p class="automation-tasks__item-description">
+                                [Текст описания для подсветить проблемы - заглушка]
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Аккордеон пункт 6 -->
+                    <div class="automation-tasks__item">
+                        <button class="automation-tasks__item-header" data-accordion-trigger data-image="6">
+                            <h3 class="automation-tasks__item-title">Анализировать и улучшать</h3>
+                        </button>
+                        <div class="automation-tasks__item-body">
+                            <p class="automation-tasks__item-description">
+                                [Текст описания для подсветить проблемы - заглушка]
+                            </p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="automation-tasks__image">
-                    <img src="./images/digitalization/digitalization-image-1d882f.png" alt="Автоматизация задач" width="671" height="439" class="automation-tasks__img">
+                    <img src="./images/automation-tasks/task-2.png" alt="Подготовить вводные" width="671" height="439" class="automation-tasks__img" data-accordion-image>
                 </div>
             </div>
         </div>
@@ -973,5 +1021,6 @@
 <script src="./scripts/header-scroll.js"></script>
 <script src="./scripts/testimonials-slider.js"></script>
 <script src="./scripts/contact-animation.js"></script>
+<script src="./scripts/automation-accordion.js"></script>
 </body>
 </html>

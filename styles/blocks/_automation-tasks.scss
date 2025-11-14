@@ -29,7 +29,7 @@
     line-height: 0.8;
     letter-spacing: -0.02em;
     text-align: center;
-    text-transform: lowercase;
+  
     color: var(--color-dark);
 
     @include tablet {
@@ -57,7 +57,7 @@
     }
   }
 
-  &__steps {
+  &__accordion {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -74,61 +74,77 @@
     }
   }
 
-  &__step {
+  &__item {
     background: var(--color-light);
     border-radius: 12px;
     transition: all var(--transition-duration);
 
-    &--inactive {
-      padding: 12px;
-      min-height: 60px;
-      display: flex;
-      align-items: center;
-    }
-
     &--active {
-      padding: 12px;
-      border-radius: 12px 12px 0 0;
+      .automation-tasks__item-header {
+        border-radius: 12px 12px 0 0;
+        padding: 12px;
+      }
+
+      .automation-tasks__item-body {
+        grid-template-rows: 1fr;
+        padding: 0 12px 12px 12px;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .automation-tasks__item-title {
+        color: var(--color-dark);
+      }
     }
   }
 
-  &__step-text {
-    font-family: 'Roboto Flex', sans-serif;
-    font-weight: 400;
-    @include fluid-text(24, 18);
-    line-height: 1.1;
-    text-transform: lowercase;
-    color: #585858;
-    opacity: 0.5;
+  &__item-header {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: all var(--transition-duration);
+    border-radius: 12px;
 
-    @include mobile {
-      font-size: 16px;
+    @include hover {
+      background: rgba(0, 0, 0, 0.02);
     }
   }
 
-  &__step-title {
-    margin: 0 0 16px 0;
-    font-family: 'Roboto Flex', sans-serif;
-    font-weight: 400;
-    @include fluid-text(24, 20);
-    line-height: 1.1;
-    text-transform: lowercase;
-    color: var(--color-dark);
-
-    @include mobile {
-      font-size: 20px;
-      margin-bottom: 16px;
-    }
-  }
-
-  &__step-description {
+  &__item-title {
     margin: 0;
     font-family: 'Roboto Flex', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
+    @include fluid-text(24, 18);
+    line-height: 0.9;
+    color: #ADADAD;
+    transition: color var(--transition-duration);
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  &__item-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    padding: 0 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: grid-template-rows 0.3s ease, padding 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    overflow: hidden;
+  }
+
+  &__item-description {
+    margin: 0;
+    min-height: 0;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 500;
     font-size: 16px;
     line-height: 1.2;
-    color: var(--color-dark);
-    opacity: 0.4;
+    color: #737373;
 
     @include mobile {
       font-size: 14px;
@@ -161,6 +177,7 @@
     border-radius: 14px;
     border: 5.3px solid var(--color-dark);
     box-shadow: 0px 12.37px 21.2px 0px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.3s ease;
 
     @include mobile {
       border-width: 2.59px;
