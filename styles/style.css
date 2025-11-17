@@ -702,6 +702,7 @@ section {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
+  width: -moz-fit-content;
   width: fit-content;
 }
 @media (max-width: 767px) {
@@ -926,7 +927,8 @@ section {
   width: 100%;
   height: 100%;
   z-index: 3;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   pointer-events: none;
 }
 @media (max-width: 767px) {
@@ -953,7 +955,8 @@ section {
     width: 100%;
     height: auto;
     z-index: 3;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     pointer-events: none;
     bottom: -200px;
   }
@@ -1054,7 +1057,8 @@ section {
   bottom: 0;
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   right: 0px;
 }
 .digitalization__card--automation__bg-image {
@@ -1118,7 +1122,8 @@ section {
   position: absolute;
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   right: 0px;
   bottom: 0px;
 }
@@ -1184,7 +1189,8 @@ section {
   position: absolute;
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   right: 0px;
   bottom: 0px;
   z-index: 2;
@@ -1217,7 +1223,8 @@ section {
   position: absolute;
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   right: 0px;
   bottom: 0px;
   z-index: 1;
@@ -1255,7 +1262,8 @@ section {
   position: absolute;
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   right: 0px;
   bottom: 0px;
   z-index: 1;
@@ -1293,7 +1301,8 @@ section {
   position: absolute;
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   right: 0px;
   bottom: 0px;
   z-index: 1;
@@ -1768,6 +1777,13 @@ section {
 .pricing {
   position: relative;
   padding-bottom: 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8F8F8 100%);
+  padding-inline: 32px;
+}
+@media (max-width: 767px) {
+  .pricing {
+    padding-inline: 8px;
+  }
 }
 .pricing__container {
   position: relative;
@@ -1775,7 +1791,6 @@ section {
   background: linear-gradient(225deg, #9396FF 0%, #6E3AFF 100%);
   border-radius: 48px;
   overflow: hidden;
-  margin-inline: 32px;
 }
 @media (max-width: 1023px) {
   .pricing__container {
@@ -1787,7 +1802,6 @@ section {
   .pricing__container {
     padding: 60px 16px;
     border-radius: 24px;
-    margin-inline: 8px;
   }
 }
 .pricing__container::before {
@@ -2215,7 +2229,8 @@ section {
   flex-shrink: 0;
   width: 54px;
   height: 66px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 767px) {
   .testimonials__avatar {
@@ -2443,6 +2458,9 @@ section {
     padding: 14px 12px;
     font-size: 14px;
   }
+}
+.contact__input::-moz-placeholder {
+  color: rgba(158, 158, 158, 0.5);
 }
 .contact__input::placeholder {
   color: rgba(158, 158, 158, 0.5);
@@ -2839,4 +2857,4 @@ section {
   .footer__credit {
     font-size: 14px;
   }
-}
+}/*# sourceMappingURL=style.css.map */
