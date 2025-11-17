@@ -2556,19 +2556,31 @@ section {
 .contact__animation-right #movingCircleFromListToPerformer,
 .contact__animation-right #animatedPathFromListToPerformer,
 .contact__animation-right #movingCircleFromSearchASpecialistToList,
-.contact__animation-right #animatedPathFromSearchASpecialistToList, .contact__animation-left #movingCircle,
+.contact__animation-right #animatedPathFromSearchASpecialistToList,
+.contact__animation-right #movingCircleFromCheckConditionToSearchDocument,
+.contact__animation-right #animatedPathFromCheckConditionToSearchDocument,
+.contact__animation-right #movingCircleFromSearchDocumentToFound,
+.contact__animation-right #animatedPathFromSearchDocumentToFound, .contact__animation-left #movingCircle,
 .contact__animation-left #animatedPath,
 .contact__animation-left #movingCircleFromListToPerformer,
 .contact__animation-left #animatedPathFromListToPerformer,
 .contact__animation-left #movingCircleFromSearchASpecialistToList,
-.contact__animation-left #animatedPathFromSearchASpecialistToList {
+.contact__animation-left #animatedPathFromSearchASpecialistToList,
+.contact__animation-left #movingCircleFromCheckConditionToSearchDocument,
+.contact__animation-left #animatedPathFromCheckConditionToSearchDocument,
+.contact__animation-left #movingCircleFromSearchDocumentToFound,
+.contact__animation-left #animatedPathFromSearchDocumentToFound {
   transition: opacity 0.5s ease-out;
 }
 .contact__animation-right #endCircle,
 .contact__animation-right #endCirclePerformer,
-.contact__animation-right #endCircleList, .contact__animation-left #endCircle,
+.contact__animation-right #endCircleList,
+.contact__animation-right #endCircleSearchDocument,
+.contact__animation-right #endCircleDocumentFound, .contact__animation-left #endCircle,
 .contact__animation-left #endCirclePerformer,
-.contact__animation-left #endCircleList {
+.contact__animation-left #endCircleList,
+.contact__animation-left #endCircleSearchDocument,
+.contact__animation-left #endCircleDocumentFound {
   transition: stroke 0.5s ease-out;
 }
 .contact__animation-right {

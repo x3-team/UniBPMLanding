@@ -51,6 +51,7 @@ class PathAnimation {
         this.hasReachedEnd = false;
         this.animationId = null;
         this.isRunning = false;
+        this.lastCurrentLength = null; // Сохраняем последнее значение для паузы
 
         // Настройки логирования
         this.debug = config.debug !== undefined ? config.debug : true;
@@ -113,6 +114,7 @@ class PathAnimation {
         this.isPaused = false;
         this.pauseStartTime = null;
         this.hasReachedEnd = false;
+        this.lastCurrentLength = null;
 
         // Возвращаем элементы в начальное состояние
         this.circle.style.opacity = '1';
@@ -145,6 +147,7 @@ class PathAnimation {
             this.isPaused = false;
             this.hasReachedEnd = false;
             this.startTime = timestamp;
+            this.lastCurrentLength = null; // Сбрасываем сохраненное значение
             this.endCircle.setAttribute('stroke', this.colors.inactive);
 
             // Возвращаем видимость круга и следа
@@ -289,13 +292,22 @@ class PathAnimation {
             }
         }
 
-        // Вычисляем прогресс
-        const elapsed = timestamp - this.startTime;
-        const progress = (elapsed % this.duration) / this.duration;
-        const reversedProgress = this.reverse ? (1 - progress) : progress;
+        // Вычисляем прогресс и позицию на пути
+        let currentLength;
 
-        // Позиция на пути
-        const currentLength = this.pathLength * reversedProgress;
+        if (this.isPaused && this.lastCurrentLength !== null) {
+            // Во время паузы используем сохраненное значение
+            currentLength = this.lastCurrentLength;
+        } else {
+            // Обычное вычисление прогресса
+            const elapsed = timestamp - this.startTime;
+            const progress = Math.min(1, elapsed / this.duration); // Ограничиваем максимум 1
+            const reversedProgress = this.reverse ? (1 - progress) : progress;
+            currentLength = this.pathLength * reversedProgress;
+
+            // Сохраняем значение для возможной паузы
+            this.lastCurrentLength = currentLength;
+        }
 
         // Обновляем позицию круга и следа
         const { point } = this.updatePosition(currentLength);

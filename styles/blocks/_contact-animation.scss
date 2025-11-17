@@ -40,14 +40,20 @@
       #movingCircleFromListToPerformer,
       #animatedPathFromListToPerformer,
       #movingCircleFromSearchASpecialistToList,
-      #animatedPathFromSearchASpecialistToList {
+      #animatedPathFromSearchASpecialistToList,
+      #movingCircleFromCheckConditionToSearchDocument,
+      #animatedPathFromCheckConditionToSearchDocument,
+      #movingCircleFromSearchDocumentToFound,
+      #animatedPathFromSearchDocumentToFound {
         transition: opacity 0.5s ease-out;
       }
 
       // Плавное изменение цвета для конечного круга
       #endCircle,
       #endCirclePerformer,
-      #endCircleList {
+      #endCircleList,
+      #endCircleSearchDocument,
+      #endCircleDocumentFound {
         transition: stroke 0.5s ease-out;
       }
     }
