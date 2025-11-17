@@ -3,48 +3,40 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!slider) return;
 
   const track = slider.querySelector('.testimonials__track');
-  const cards = Array.from(track.querySelectorAll('.testimonials__card:not([data-clone])'));
+  const originalCards = Array.from(track.querySelectorAll('.testimonials__card'));
   const prevButton = slider.querySelector('.testimonials__nav-button--prev');
   const nextButton = slider.querySelector('.testimonials__nav-button--next');
 
-  if (!track || cards.length === 0) return;
+  if (!track || originalCards.length === 0) return;
 
-  // Текущий индекс (начинаем с 0)
-  let currentIndex = 0;
+  // Клонируем карточки для бесконечного эффекта
+  const cloneCount = originalCards.length;
+
+  // Клонируем в начало
+  for (let i = originalCards.length - 1; i >= 0; i--) {
+    const clone = originalCards[i].cloneNode(true);
+    clone.setAttribute('data-clone', 'start');
+    track.insertBefore(clone, track.firstChild);
+  }
+
+  // Клонируем в конец
+  originalCards.forEach(card => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('data-clone', 'end');
+    track.appendChild(clone);
+  });
+
+  const allCards = Array.from(track.querySelectorAll('.testimonials__card'));
+
+  // Текущий индекс (начинаем с первой настоящей карточки)
+  let currentIndex = cloneCount;
   let isAnimating = false;
 
   // Получаем ширину карточки + gap
   const getCardWidth = () => {
-    const card = cards[0];
+    const card = allCards[0];
     const gap = parseInt(getComputedStyle(track).gap) || 24;
     return card.offsetWidth + gap;
-  };
-
-  // Обновляем состояние кнопок
-  const updateButtonsState = () => {
-    if (prevButton) {
-      if (currentIndex === 0) {
-        prevButton.disabled = true;
-        prevButton.style.opacity = '0.5';
-        prevButton.style.cursor = 'not-allowed';
-      } else {
-        prevButton.disabled = false;
-        prevButton.style.opacity = '1';
-        prevButton.style.cursor = 'pointer';
-      }
-    }
-
-    if (nextButton) {
-      if (currentIndex >= cards.length - 1) {
-        nextButton.disabled = true;
-        nextButton.style.opacity = '0.5';
-        nextButton.style.cursor = 'not-allowed';
-      } else {
-        nextButton.disabled = false;
-        nextButton.style.opacity = '1';
-        nextButton.style.cursor = 'pointer';
-      }
-    }
   };
 
   // Обновляем позицию слайдера
@@ -59,31 +51,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     track.style.transform = `translateX(${offset}px)`;
-    updateButtonsState();
+  };
+
+  // Проверяем и корректируем позицию для бесконечного эффекта
+  const checkInfiniteLoop = () => {
+    if (currentIndex >= cloneCount + originalCards.length) {
+      // Перемещаемся к началу настоящих карточек
+      currentIndex = cloneCount;
+      updateSliderPosition(false);
+    } else if (currentIndex < cloneCount) {
+      // Перемещаемся к концу настоящих карточек
+      currentIndex = cloneCount + originalCards.length - 1;
+      updateSliderPosition(false);
+    }
   };
 
   // Переход к следующему слайду
   const goToNext = () => {
-    if (isAnimating || currentIndex >= cards.length - 1) return;
+    if (isAnimating) return;
     isAnimating = true;
 
     currentIndex++;
     updateSliderPosition(true);
 
     setTimeout(() => {
+      checkInfiniteLoop();
       isAnimating = false;
     }, 500);
   };
 
   // Переход к предыдущему слайду
   const goToPrev = () => {
-    if (isAnimating || currentIndex === 0) return;
+    if (isAnimating) return;
     isAnimating = true;
 
     currentIndex--;
     updateSliderPosition(true);
 
     setTimeout(() => {
+      checkInfiniteLoop();
       isAnimating = false;
     }, 500);
   };
@@ -134,6 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Инициализация
+  // Инициализация - устанавливаем начальную позицию на первой настоящей карточке
   updateSliderPosition(false);
 });

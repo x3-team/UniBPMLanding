@@ -108,9 +108,7 @@
     transition: all var(--transition-duration);
     border-radius: 12px;
 
-    @include hover {
-      background: rgba(0, 0, 0, 0.02);
-    }
+   
   }
 
   &__item-title {
@@ -121,6 +119,10 @@
     line-height: 0.9;
     color: #ADADAD;
     transition: color var(--transition-duration);
+    transition: all .2s ease;
+    @include hover {
+    opacity: 0.6;
+    }
 
     @include mobile {
       font-size: 18px;

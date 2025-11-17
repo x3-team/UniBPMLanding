@@ -110,7 +110,7 @@
   &__title {
     margin: 0;
     font-family: var(--font-family-base);
-    font-weight: 600;
+    font-weight: 500;
     @include mixins.fluid-text(48, 28);
     line-height: 0.8;
     letter-spacing: -0.02em;
@@ -189,7 +189,7 @@
 
     &--primary {
       background-color: var(--color-light);
-      color: #4931B1;
+      color: black;
 
       @include media.hover {
         background-color: rgba(255, 255, 255, 0.9);
@@ -197,7 +197,7 @@
     }
 
     &--secondary {
-      background-color: rgba(255, 255, 255, 0.25);
+        background-color: rgba(0, 0, 0, 0.09);
       color: var(--color-light);
 
       @include media.hover {

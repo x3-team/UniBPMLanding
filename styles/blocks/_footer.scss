@@ -47,6 +47,10 @@
     justify-content: center;
     z-index: 1;
     top: -100%;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+
     @include tablet {
       margin-bottom: 48px;
     }
