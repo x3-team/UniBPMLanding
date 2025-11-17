@@ -4,7 +4,8 @@
 
 .pricing {
   position: relative;
-
+  padding-bottom: 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8F8F8 100%);
   &__container {
     position: relative;
     padding: 120px 115px;
