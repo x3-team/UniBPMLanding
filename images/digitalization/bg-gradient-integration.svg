@@ -1,0 +1,32 @@
+<svg width="809" height="285" viewBox="0 0 809 285" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_708_274)">
+<path d="M-0.5 24C-0.5 10.7452 10.2452 0 23.5 0H785.5C798.755 0 809.5 10.7452 809.5 24V261C809.5 274.255 798.755 285 785.5 285H23.5C10.2452 285 -0.5 274.255 -0.5 261V24Z" fill="url(#paint0_linear_708_274)"/>
+<path d="M-0.5 24C-0.5 10.7452 10.2452 0 23.5 0H785.5C798.755 0 809.5 10.7452 809.5 24V261C809.5 274.255 798.755 285 785.5 285H23.5C10.2452 285 -0.5 274.255 -0.5 261V24Z" fill="url(#paint1_linear_708_274)"/>
+<path d="M-0.5 24C-0.5 10.7452 10.2452 0 23.5 0H785.5C798.755 0 809.5 10.7452 809.5 24V261C809.5 274.255 798.755 285 785.5 285H23.5C10.2452 285 -0.5 274.255 -0.5 261V24Z" fill="url(#paint2_linear_708_274)"/>
+<g opacity="0.6" filter="url(#filter0_f_708_274)">
+<ellipse cx="-38.3277" cy="497.319" rx="221.486" ry="400.48" transform="rotate(26.78 -38.3277 497.319)" fill="#FF5E63"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_708_274" x="-670.017" y="-237.967" width="1263.38" height="1470.57" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="182" result="effect1_foregroundBlur_708_274"/>
+</filter>
+<linearGradient id="paint0_linear_708_274" x1="809.5" y1="-59.8912" x2="99.9715" y2="1012.15" gradientUnits="userSpaceOnUse">
+<stop offset="0.225954" stop-color="#9396FF"/>
+<stop offset="1" stop-color="#6E3AFF"/>
+</linearGradient>
+<linearGradient id="paint1_linear_708_274" x1="809.5" y1="-59.8912" x2="755.005" y2="391.141" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2F163B"/>
+<stop offset="1" stop-color="#723AFF"/>
+</linearGradient>
+<linearGradient id="paint2_linear_708_274" x1="809.5" y1="-59.8912" x2="99.9715" y2="1012.15" gradientUnits="userSpaceOnUse">
+<stop offset="0.225954" stop-color="#9497FF"/>
+<stop offset="1" stop-color="#6E3AFF"/>
+</linearGradient>
+<clipPath id="clip0_708_274">
+<path d="M-0.5 24C-0.5 10.7452 10.2452 0 23.5 0H785.5C798.755 0 809.5 10.7452 809.5 24V261C809.5 274.255 798.755 285 785.5 285H23.5C10.2452 285 -0.5 274.255 -0.5 261V24Z" fill="white"/>
+</clipPath>
+</defs>
+</svg>

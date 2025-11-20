@@ -1501,7 +1501,8 @@ section {
   }
 }
 .digitalization__card--integration {
-  background: linear-gradient(207deg, rgb(147, 150, 255) 42%, rgb(110, 58, 255) 100%);
+  background: url("../images/digitalization/bg-gradient-integration.svg") no-repeat center center;
+  background-size: cover;
   grid-area: 1/5/2/13;
   display: flex;
   flex-direction: column;
@@ -1519,8 +1520,13 @@ section {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  right: 0px;
+  right: -30%;
   top: 0;
+}
+@media (max-width: 767px) {
+  .digitalization__card--integration__bg {
+    right: -20%;
+  }
 }
 @media (max-width: 480px) {
   .digitalization__card--integration__bg {
@@ -1742,6 +1748,7 @@ section {
   background-clip: text;
   max-width: 401px;
   margin: 0 auto 24px;
+  padding: 2px 0;
 }
 .digitalization__card--integration .digitalization__card-title {
   text-align: left;
@@ -1750,6 +1757,7 @@ section {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   max-width: 380px;
+  padding: 2px 0;
 }
 @media (max-width: 480px) {
   .digitalization__card--integration .digitalization__card-title {
@@ -1767,10 +1775,14 @@ section {
   }
 }
 .digitalization__card--roles .digitalization__card-title {
-  color: var(--color-light);
   text-align: center;
+  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: clamp(24px, 2.2222222222vw, 32px);
   margin-bottom: 24px;
+  padding: 2px 0;
 }
 .digitalization__card--processes .digitalization__card-title {
   color: #6FADEE;
@@ -2182,7 +2194,7 @@ section {
 }
 .pricing__container {
   position: relative;
-  padding: 120px 115px;
+  padding: 64px 115px;
   background: linear-gradient(225deg, #9396FF 0%, #6E3AFF 100%);
   border-radius: 48px;
   overflow: hidden;
@@ -2359,7 +2371,7 @@ section {
 }
 .pricing__plan-feature-text {
   font-family: "Roboto Flex", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 20px;
   line-height: 1;
   text-transform: lowercase;
@@ -2457,13 +2469,8 @@ section {
 }
 .pricing__stats {
   display: flex;
-  justify-content: space-between;
-  gap: 64px;
-}
-@media (max-width: 1023px) {
-  .pricing__stats {
-    gap: 40px;
-  }
+  justify-content: center;
+  gap: 32px;
 }
 @media (max-width: 767px) {
   .pricing__stats {

@@ -13,7 +13,7 @@
   }
   &__container {
     position: relative;
-    padding: 120px 115px;
+    padding: 64px 115px;
     background: linear-gradient(225deg, #9396FF 0%, #6E3AFF 100%);
     border-radius: 48px;
     overflow: hidden;
@@ -198,7 +198,7 @@
 
   &__plan-feature-text {
     font-family: 'Roboto Flex', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 20px;
     line-height: 1;
     text-transform: lowercase;
@@ -308,13 +308,11 @@
 
   &__stats {
     display: flex;
-    justify-content: space-between;
-    gap: 64px;
+    justify-content: center;
+    gap: 32px;
 
 
-    @include tablet {
-      gap: 40px;
-    }
+
 
     @include mobile {
       flex-direction: column;
