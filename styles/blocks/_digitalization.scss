@@ -68,7 +68,7 @@
   &__card {
     position: relative;
     border-radius: var(--border-radius-small);
-    padding: 32px;
+    padding: 20px 32px;
     overflow: hidden;
     border: 1px solid #FBFBFB;
 
@@ -404,7 +404,6 @@
       
       text-align: center;
       @include mixins.fluid-text(32, 24);
-      line-height: 0.8;
       margin-bottom: 24px;
     }
 
@@ -433,6 +432,7 @@
     font-size: 16px;
     line-height: 1.2;
     margin: 0;
+    font-weight: 400;
 
     .digitalization__card--automation & {
       color: rgba(255, 255, 255, 0.6);

@@ -1,6 +1,10 @@
 @use 'mixins';
 @use 'media';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @include mixins.fluid-text(18, 16);
 

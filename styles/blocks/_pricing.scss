@@ -91,7 +91,7 @@
   }
 
   &__plan {
-    width: 562px;
+    width: 100%;
     padding: 32px;
     border-radius: 40px;
     border: 1.5px solid rgba(255, 255, 255, 0.25);
@@ -128,9 +128,9 @@
     font-family: 'Roboto Flex', sans-serif;
     font-weight: 500;
     @include fluid-text(48, 32);
-    line-height: 0.92;
-    letter-spacing: -0.02em;
-    text-transform: capitalize;
+    line-height: 1;
+
+   
 
     @include mobile {
       font-size: 36px;

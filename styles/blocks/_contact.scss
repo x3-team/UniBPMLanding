@@ -111,10 +111,10 @@
   &__form-fields {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
 
     @include mobile {
-      gap: 6px;
+      gap: 4px;
     }
   }
 
@@ -153,7 +153,7 @@
 
   &__submit {
     width: 100%;
-    padding: 14px 29px;
+    padding: 20px 29px;
     background: #6E3AFF;
     color: var(--color-light);
     border: none;
