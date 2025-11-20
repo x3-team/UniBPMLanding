@@ -334,6 +334,11 @@ section {
     padding: 16px 0;
   }
 }
+@media (max-width: 480px) {
+  .header {
+    padding: 8px 0;
+  }
+}
 .header--scrolled {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
@@ -1557,6 +1562,7 @@ section {
     width: 100% !important;
     bottom: 0px;
     right: 0;
+    height: 100% !important;
     margin: 0 auto !important;
   }
 }
@@ -1628,12 +1634,11 @@ section {
   -o-object-fit: cover;
      object-fit: cover;
   right: 0px;
-  bottom: 0px;
+  bottom: -10px;
   z-index: 1;
 }
 .digitalization__card--processes__bg-image {
   margin: 0 auto;
-  width: 90%;
 }
 @media (max-width: 767px) {
   .digitalization__card--processes__bg-image {
@@ -1747,12 +1752,12 @@ section {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   max-width: 401px;
-  margin: 0 auto 24px;
+  margin: 0 auto 19px;
   padding: 2px 0;
 }
 .digitalization__card--integration .digitalization__card-title {
   text-align: left;
-  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.6) 100%);
+  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.4) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1762,7 +1767,7 @@ section {
 @media (max-width: 480px) {
   .digitalization__card--integration .digitalization__card-title {
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto 19px;
   }
 }
 .digitalization__card--bpmn .digitalization__card-title {
@@ -1820,6 +1825,11 @@ section {
   color: rgba(255, 255, 255, 0.6);
   text-align: left;
   max-width: 383px;
+}
+@media (max-width: 480px) {
+  .digitalization__card--integration .digitalization__card-description {
+    text-align: center;
+  }
 }
 .digitalization__card--bpmn .digitalization__card-description {
   color: #6FADEE;

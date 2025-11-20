@@ -18,6 +18,10 @@
   @include media.mobile {
     padding: 16px 0;
   }
+  
+  @include media.mobile-s {
+    padding: 8px 0;
+  }
 
   // Состояние при скролле - добавляет тень
   &--scrolled {
