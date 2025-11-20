@@ -6,6 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
     <title>UniBPM</title>
 </head>
 <body>
@@ -20,6 +24,10 @@
                 <span class="header__lang-current">Ru</span>
                 <img src="./images/header/chevron-down.svg" alt="" width="16" height="16" class="header__lang-icon">
             </button>
+            <ul class="header__lang-dropdown">
+                <li class="header__lang-option" data-lang="ru">Ru</li>
+                <li class="header__lang-option" data-lang="en">En</li>
+            </ul>
         </div>
 
         <nav class="header__nav">
@@ -42,20 +50,92 @@
         
 
         <div class="header__actions">
-            <a href="#download" class="header__download">
-                <span>Скачать презентацию</span>
+            <a href="#download" class="header__download ">
+                <span>презентация</span>
                 <img src="./images/header/download-icon.svg" alt="" width="16" height="16" class="header__download-icon">
             </a>
-            <a href="#demo" class="header__button button">Запросить демо</a>
+            <a href="#demo" class="header__button button">запросить демо</a>
         </div>
 
-        <div class="header__mobile-actions">
-            <a href="#demo" class="header__button button">Запросить демо</a>
+        <div class="header__mobile-actions  ">
+            <a href="#download" class="header__download hidden-mobile">
+                <span>презентация</span>
+                <img src="./images/header/download-icon.svg" alt="" width="16" height="16" class="header__download-icon">
+            </a>
+            <a href="#demo" class="header__button button">запросить демо</a>
             <button class="header__burger" type="button" aria-label="Открыть меню">
-                <span></span>
-                <span></span>
-                <span></span>
+                <svg class="header__burger-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="header__burger-line header__burger-line--top" d="M8 9H24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="header__burger-line header__burger-line--middle" d="M8 16H24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="header__burger-line header__burger-line--bottom" d="M8 23H24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
             </button>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="header__mobile-menu">
+        <div class="header__mobile-menu-content">
+            <div class="header__mobile-menu-header">
+                <a href="/" class="header__logo">
+                    <img src="./images/header/logo.svg" alt="UniBPM Logo" width="120" height="31">
+                </a>
+                <div class="header__mobile-menu-header-actions">
+                    <a href="#download" class="header__mobile-menu-download hidden-mobile">
+                        <span>презентация</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 10V12.6667C14 13.0203 13.8595 13.3594 13.6095 13.6095C13.3594 13.8595 13.0203 14 12.6667 14H3.33333C2.97971 14 2.64057 13.8595 2.39052 13.6095C2.14048 13.3594 2 13.0203 2 12.6667V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4.66602 6.66667L7.99935 10L11.3327 6.66667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 10V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#demo" class="header__mobile-menu-cta ">запросить демо</a>
+                    <button class="header__mobile-menu-close" type="button" aria-label="Закрыть меню">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <nav class="header__mobile-nav">
+                <ul class="header__mobile-menu-list">
+                    <li class="header__mobile-menu-item">
+                        <a href="#features" class="header__mobile-menu-link">возможности</a>
+                    </li>
+                    <li class="header__mobile-menu-item">
+                        <a href="#integration" class="header__mobile-menu-link">интеграция</a>
+                    </li>
+                    <li class="header__mobile-menu-item">
+                        <a href="#pricing" class="header__mobile-menu-link">стоимость</a>
+                    </li>
+                    <li class="header__mobile-menu-item">
+                        <a href="#docs" class="header__mobile-menu-link">документация</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#download" class="header__mobile-menu-download  header__mobile-menu-download-small visible-mobile">
+                <span>презентация</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M14 10V12.6667C14 13.0203 13.8595 13.3594 13.6095 13.6095C13.3594 13.8595 13.0203 14 12.6667 14H3.33333C2.97971 14 2.64057 13.8595 2.39052 13.6095C2.14048 13.3594 2 13.0203 2 12.6667V10"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M4.66602 6.66667L7.99935 10L11.3327 6.66667" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M8 10V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+
+            <div class="header__lang header__lang-mobile">
+                <button class="header__lang-selector" type="button">
+                    <span class="header__lang-current">Ru</span>
+                    <img src="./images/header/chevron-down.svg" alt="" width="16" height="16" class="header__lang-icon">
+                </button>
+                <ul class="header__lang-dropdown">
+                    <li class="header__lang-option" data-lang="ru">Ru</li>
+                    <li class="header__lang-option" data-lang="en">En</li>
+                </ul>
+            </div>
         </div>
     </div>
 </header>
@@ -69,8 +149,8 @@
                     <div class="hero__badge">-40% времени на операционные задачи</div>
                     <h1 class="hero__title">бизнес без рутины и ошибок с помощью автоматизации</h1>
                     <p class="hero__description">
-                        Локальное решение на базе Camunda.<br>
-                        Проведем анализ ваших процессов и подберем нужный комплект
+                        локальное решение на базе Camunda.<br>
+                        проведем анализ ваших процессов и подберем нужный комплект
                     </p>
                 </div>
                 
@@ -81,21 +161,22 @@
                 <ul class="hero__features">
                     <li class="hero__feature">
                         <img src="./images/hero/icon-check.svg" alt="" width="20" height="20" class="hero__feature-icon">
-                        <span class="hero__feature-text">Избавьтесь от ручного согласования</span>
+                        <span class="hero__feature-text">избавьтесь от ручного согласования</span>
                     </li>
                     <li class="hero__feature">
                         <img src="./images/hero/icon-blocks.svg" alt="" width="20" height="20" class="hero__feature-icon">
-                        <span class="hero__feature-text">Максимально совместимая система</span>
+                        <span class="hero__feature-text">максимально совместимая система</span>
                     </li>
                     <li class="hero__feature">
                         <img src="./images/hero/icon-clock.svg" alt="" width="20" height="20" class="hero__feature-icon">
-                        <span class="hero__feature-text">Не теряйте данные и время на отчеты</span>
+                        <span class="hero__feature-text">не теряйте данные и время на отчеты</span>
                     </li>
                 </ul>
             </div>
             <div class="hero__background">
                 <div class="hero__bg-gradient"></div>
-                <img src="./images/hero/hero-bg-image.webp" alt="" class="hero__bg-image ">
+                <img src="./images/hero/bg-desctop.png" alt="" class="hero__bg-image ">
+                <img src="./images/hero/bg-tablet.png" alt="" class="hero__bg-image__tablet-laptop ">
                 <img src="./images/hero/laptop.webp" alt="" class="hero__bg-image__mobile-laptop ">
             </div>
         </div>
@@ -106,14 +187,31 @@
             <h2 class="digitalization__title">поможем оцифровать процессы для упрощения масштабирования</h2>
 
             <div class="digitalization__grid"   >
+                <!-- Карточка 2: Бесшовная интеграция -->
+                <div class="digitalization__card digitalization__card--integration">
+                    <div class="digitalization__card-content">
+                        <h3 class="digitalization__card-title">бесшовная интеграция в любую систему</h3>
+                        <p class="digitalization__card-description">
+                            cотрудники экономят до 40% времени за счет алгоритма, который сделает за них всю рутину
+                        </p>
+                    </div>
+                    <div class="digitalization__card--integration__bg">
+                        <img src="./images/digitalization/integration-bg.webp" alt="" class="digitalization__card--integration__bg-image">
+                    </div>
+                    <div class="digitalization__card--integration__bg-mobile visually-hidden ">
+                        <img src="./images/digitalization/mobile/integration-bg.png" alt=""
+                            class="digitalization__card--integration__bg-image-mobile">
+                    </div>
+                </div>
+
                 <!-- Карточка 1: Автоматизируем рутинные процессы -->
                 <div class="digitalization__card digitalization__card--automation">
                     <div class="digitalization__card-content">
                         <h3 class="digitalization__card-title">aвтоматизируем рутинные процессы</h3>
                         <p class="digitalization__card-description">
-                            Сотрудники экономят до 40% времени за счет алгоритма, который сделает за них всю рутину — останется только принять результат
+                            сотрудники экономят до 40% времени за счет алгоритма, который сделает за них всю рутину — останется только принять результат
                         </p>
-                       
+
                     </div>
                     <div class="digitalization__card--automation__bg">
                         <img src="./images/digitalization/automatization-bg.webp" alt="" class="digitalization__card--automation__bg-image">
@@ -123,28 +221,12 @@
                     </div>
 
                 </div>
-                <!-- Карточка 2: Бесшовная интеграция -->
-                <div class="digitalization__card digitalization__card--integration">
-                    <div class="digitalization__card-content">
-                        <h3 class="digitalization__card-title">бесшовная интеграция в любую систему</h3>
-                        <p class="digitalization__card-description">
-                            Сотрудники экономят до 40% времени за счет алгоритма, который сделает за них всю рутину
-                        </p>
-                    </div>
-                    <div class="digitalization__card--integration__bg">
-                        <img src="./images/digitalization/integration-bg.webp" alt="" class="digitalization__card--integration__bg-image">
-                    </div>
-                    <div class="digitalization__card--integration__bg-mobile visually-hidden ">
-                        <img src="./images/digitalization/mobile/integration-bg.webp" alt=""
-                            class="digitalization__card--integration__bg-image-mobile">
-                    </div>
-                </div>
                 
                 <!-- Карточка 3: Гибкая настройка ролей и прав -->
                 <div class="digitalization__card digitalization__card--roles">
-                    <h3 class="digitalization__card-title">Гибкая настройка ролей и прав</h3>
+                    <h3 class="digitalization__card-title">гибкая настройка ролей и прав</h3>
                     <p class="digitalization__card-description digitalization__card-description--centered">
-                        Сотрудники экономят до 40% времени за счет алгоритма
+                        сотрудники экономят до 40% времени за счет алгоритма
                     </p>
                     <div class="digitalization__card--roles__bg">
                         <img src="./images/digitalization/roles-bg.webp" alt="" class="digitalization__card--roles__bg-image">
@@ -156,7 +238,7 @@
                     <div class="digitalization__card-content">
                         <h3 class="digitalization__card-title">предоставляем полную картину процессов</h3>
                         <p class="digitalization__card-description">
-                            Сотрудники экономят до 40% времени за счет алгоритма
+                            сотрудники экономят до 40% времени за счет алгоритма
                         </p>
                     </div>
                     <div class="digitalization__card--processes__bg">
@@ -172,7 +254,7 @@
                     <div class="digitalization__card-content">
                         <h3 class="digitalization__card-title">простой интерфейс с BPMN-движком</h3>
                         <p class="digitalization__card-description">
-                            Сотрудники экономят до 40% времени за счет алгоритма, который сделает за них всю рутину — останется только
+                            сотрудники экономят до 40% времени за счет алгоритма, который сделает за них всю рутину — останется только
                             принять результат
                         </p>
                     </div>
@@ -184,7 +266,7 @@
                 <div class="digitalization__card digitalization__card--scale">
                     <h3 class="digitalization__card-title">масштабируемся на тысячи процессов</h3>
                     <p class="digitalization__card-description">
-                        Сотрудники экономят до 40% времени за счет алгоритма, который сделает за них всю рутину — останется только принять результат
+                        сотрудники экономят до 40% времени за счет алгоритма, который сделает за них всю рутину — останется только принять результат
                     </p>
                     <div class="digitalization__card--scale__bg">
                         <img src="./images/digitalization/scale-bg.webp" alt="" class="digitalization__card--scale__bg-image">
@@ -204,11 +286,11 @@
                     <!-- Аккордеон пункт 1 -->
                     <div class="automation-tasks__item">
                         <button class="automation-tasks__item-header" data-accordion-trigger data-image="1">
-                            <h3 class="automation-tasks__item-title">Смоделировать процессы</h3>
+                            <h3 class="automation-tasks__item-title">смоделировать процессы</h3>
                         </button>
                         <div class="automation-tasks__item-body">
                             <p class="automation-tasks__item-description">
-                                Постройте визуальную модель бизнес-процесса в BPMN — определите участников, роли, правила и маршруты. UniBPM превращает
+                                постройте визуальную модель бизнес-процесса в BPMN — определите участников, роли, правила и маршруты. UniBPM превращает
                                 схему в исполняемую модель без кода.
                             </p>
                         </div>
@@ -217,11 +299,11 @@
                     <!-- Аккордеон пункт 2 (активный по умолчанию) -->
                 <div class="automation-tasks__item">
                     <button class="automation-tasks__item-header" data-accordion-trigger data-image="2">
-                        <h3 class="automation-tasks__item-title">Добавить людей</h3>
+                        <h3 class="automation-tasks__item-title">добавить людей</h3>
                     </button>
                     <div class="automation-tasks__item-body">
                         <p class="automation-tasks__item-description">
-                            Назначайте исполнителей и роли, подключайте сотрудников к задачам и заявкам. UniBPM сам распределит работу
+                            назначайте исполнителей и роли, подключайте сотрудников к задачам и заявкам. UniBPM сам распределит работу
                             по ролям,
                             обеспечит прозрачность и взаимодействие между участниками.
                         </p>
@@ -231,11 +313,11 @@
                     <!-- Аккордеон пункт 3 -->
                 <div class="automation-tasks__item automation-tasks__item--active">
                     <button class="automation-tasks__item-header" data-accordion-trigger data-image="3">
-                        <h3 class="automation-tasks__item-title">Подключение интеграции к ИИ</h3>
+                        <h3 class="automation-tasks__item-title">добавить автоматизацию</h3>
                     </button>
                     <div class="automation-tasks__item-body">
                         <p class="automation-tasks__item-description">
-                            Интегрируйте UniBPM с корпоративными системами и облачными сервисами, подключайте ИИ-агента для
+                            интегрируйте UniBPM с корпоративными системами и облачными сервисами, подключайте ИИ-агента для
                             автоматизации рутинных
                             действий и принятия решений.
                         </p>
@@ -246,11 +328,11 @@
                     <!-- Аккордеон пункт 4 -->
                     <div class="automation-tasks__item">
                         <button class="automation-tasks__item-header" data-accordion-trigger data-image="4">
-                            <h3 class="automation-tasks__item-title">Исполнять процессы</h3>
+                            <h3 class="automation-tasks__item-title">исполнять процессы</h3>
                         </button>
                         <div class="automation-tasks__item-body">
                             <p class="automation-tasks__item-description">
-                                Запускайте процессы прямо из интерфейса или через API. UniBPM автоматически создаёт задачи, уведомления и маршрутизирует
+                                запускайте процессы прямо из интерфейса или через API. UniBPM автоматически создаёт задачи, уведомления и маршрутизирует
                                 действия по заданной модели процесса.
                             </p>
                         </div>
@@ -259,11 +341,11 @@
                     <!-- Аккордеон пункт 5 -->
                     <div class="automation-tasks__item">
                         <button class="automation-tasks__item-header" data-accordion-trigger data-image="5">
-                            <h3 class="automation-tasks__item-title">Управлять исполнением</h3>
+                            <h3 class="automation-tasks__item-title">управлять исполнением</h3>
                         </button>
                         <div class="automation-tasks__item-body">
                             <p class="automation-tasks__item-description">
-                            Отслеживайте выполнение на досках и таймлайнах, управляйте майлстоунами, получайте уведомления и отчёты. Всё под
+                            отслеживайте выполнение на досках и таймлайнах, управляйте майлстоунами, получайте уведомления и отчёты. Всё под
                             контролем — от задач до SLA.
                             </p>
                         </div>
@@ -271,11 +353,11 @@
                     <!-- Аккордеон пункт 6 -->
                     <div class="automation-tasks__item">
                         <button class="automation-tasks__item-header" data-accordion-trigger data-image="6">
-                            <h3 class="automation-tasks__item-title">Анализировать и улучшать</h3>
+                            <h3 class="automation-tasks__item-title">анализировать и улучшать</h3>
                         </button>
                         <div class="automation-tasks__item-body">
                             <p class="automation-tasks__item-description">
-                            Собирайте статистику выполнения, выявляйте узкие места, оптимизируйте процессы и обновляйте модели — без остановки
+                            собирайте статистику выполнения, выявляйте узкие места, оптимизируйте процессы и обновляйте модели — без остановки
                             исполнения.
                             </p>
                         </div>
@@ -297,33 +379,33 @@
                 <!-- Шаг 1 -->
                 <div class="implementation__step">
                     <div class="implementation__step-image ">
-                        <img src="./images/implementation/step-1.webp" alt="" width="220" height="303" class="implementation__step-img">
+                        <img src="./images/implementation/step-1.svg" alt="" width="220" height="303" class="implementation__step-img">
                     </div>
-                    <h3 class="implementation__step-title">Проведем аудит процессов и подскажем, что можно автоматизировать</h3>
+                    <h3 class="implementation__step-title">проведем аудит процессов <span  class="implementation__step-title-gray">и подскажем, что можно автоматизировать</span> </h3>
                     <p class="implementation__step-description">
-                        Сотрудники экономят до 40% времени за счет алгоритма, который сделает за них
+                        сотрудники экономят до 40% времени за счет алгоритма, который сделает за них
                     </p>
                 </div>
 
                 <!-- Шаг 2 -->
                 <div class="implementation__step ">
                     <div class="implementation__step-image">
-                        <img src="./images/implementation/step-2.webp" alt="" width="232" height="303" class="implementation__step-img">
+                        <img src="./images/implementation/step-2.svg" alt="" width="232" height="303" class="implementation__step-img">
                     </div>
-                    <h3 class="implementation__step-title">Подготовим техническую базу на основе ваших решений</h3>
+                    <h3 class="implementation__step-title">подготовим техническую базу <span class="implementation__step-title-gray">на основе ваших решений</span></h3>
                     <p class="implementation__step-description">
-                        Сотрудники экономят до 40% времени за счет алгоритма, который сделает за них
+                        сотрудники экономят до 40% времени за счет алгоритма, который сделает за них
                     </p>
                 </div>
 
                 <!-- Шаг 3 -->
                 <div class="implementation__step ">
                     <div class="implementation__step-image">
-                        <img src="./images/implementation/step-3.webp" alt="" width="227" height="303" class="implementation__step-img">
+                        <img src="./images/implementation/step-3.svg" alt="" width="227" height="303" class="implementation__step-img">
                     </div>
-                    <h3 class="implementation__step-title">Внедрим решение и обучим сотрудников работе с инструментом</h3>
+                    <h3 class="implementation__step-title">внедрим решение <span class="implementation__step-title-gray">и обучим сотрудников работе с инструментом</span> </h3>
                     <p class="implementation__step-description">
-                        Сотрудники экономят до 40% времени за счет алгоритма, который сделает за них
+                        сотрудники экономят до 40% времени за счет алгоритма, который сделает за них
                     </p>
                 </div>
             </div>
@@ -339,14 +421,14 @@
                     <!-- Карточка 1 -->
                     <div class="testimonials__card">
                         <p class="testimonials__text">
-                            Мы полностью автоматизировали HR-процесс, теперь скорим кандидатов на 30% быстрее
+                            мы полностью автоматизировали HR-процесс, теперь скорим кандидатов на 30% быстрее
                         </p>
                         <div class="testimonials__author">
                             <img src="./images/testimonials/avatar.png" alt="" class="testimonials__avatar" width="54"
                                 height="66">
                             <div class="testimonials__info">
-                                <div class="testimonials__name">Виктор Королёв</div>
-                                <div class="testimonials__company">Яндекс</div>
+                                <div class="testimonials__name">виктор королёв</div>
+                                <div class="testimonials__company">яндекс</div>
                             </div>
                         </div>
                     </div>
@@ -354,14 +436,14 @@
                     <!-- Карточка 2 -->
                     <div class="testimonials__card">
                         <p class="testimonials__text">
-                            Мы полностью автоматизировали HR-процесс, теперь скорим кандидатов на 30% быстрее
+                            мы полностью автоматизировали HR-процесс, теперь скорим кандидатов на 30% быстрее
                         </p>
                         <div class="testimonials__author">
                             <img src="./images/testimonials/avatar.png" alt="" class="testimonials__avatar" width="54"
                                 height="66">
                             <div class="testimonials__info">
-                                <div class="testimonials__name">Виктор Королёв</div>
-                                <div class="testimonials__company">Сбер</div>
+                                <div class="testimonials__name">виктор королёв</div>
+                                <div class="testimonials__company">сбер</div>
                             </div>
                         </div>
                     </div>
@@ -369,26 +451,26 @@
                     <!-- Карточка 3 -->
                     <div class="testimonials__card">
                         <p class="testimonials__text">
-                            Мы полностью автоматизировали HR-процесс, теперь скорим кандидатов на 30% быстрее
+                            мы полностью автоматизировали HR-процесс, теперь скорим кандидатов на 30% быстрее
                         </p>
                         <div class="testimonials__author">
                             <img src="./images/testimonials/avatar.png" alt="" class="testimonials__avatar" width="54"
                                 height="66">
                             <div class="testimonials__info">
-                                <div class="testimonials__name">Виктор Королёв</div>
-                                <div class="testimonials__company">Авито</div>
+                                <div class="testimonials__name">виктор королёв</div>
+                                <div class="testimonials__company">авито</div>
                             </div>
                         </div>
                     </div>
                     <div class="testimonials__card">
                         <p class="testimonials__text">
-                            Мы полностью автоматизировали HR-процесс, теперь скорим кандидатов на 30% быстрее
+                            мы полностью автоматизировали HR-процесс, теперь скорим кандидатов на 30% быстрее
                         </p>
                         <div class="testimonials__author">
                             <img src="./images/testimonials/avatar.png" alt="" class="testimonials__avatar" width="54" height="66">
                             <div class="testimonials__info">
-                                <div class="testimonials__name">Виктор Королёв</div>
-                                <div class="testimonials__company">Авито</div>
+                                <div class="testimonials__name">виктор королёв</div>
+                                <div class="testimonials__company">авито</div>
                             </div>
                         </div>
                     </div>
@@ -425,44 +507,44 @@
                     <div class="pricing__plan-header">
                         <h3 class="pricing__plan-title">Community</h3>
                         <p class="pricing__plan-description">
-                            Протестируйте версию, в которой доступно создание одного процесса
+                            протестируйте версию, в которой доступно создание одного процесса
                         </p>
                     </div>
 
                     <ul class="pricing__plan-features">
                         <li class="pricing__plan-feature">
                             <img src="./images/price/community.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24">
-                            <span class="pricing__plan-feature-text">Автоматизация 1 процесса</span>
+                            <span class="pricing__plan-feature-text">автоматизация 1 процесса</span>
                         </li>
                         <li class="pricing__plan-feature">
                             <img src="./images/price/community.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24">
-                            <span class="pricing__plan-feature-text">Локальный интерфейс</span>
+                            <span class="pricing__plan-feature-text">локальный интерфейс</span>
                         </li>
                         <li class="pricing__plan-feature">
                             <img src="./images/price/community.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24">
-                            <span class="pricing__plan-feature-text">До 3 пользователей</span>
+                            <span class="pricing__plan-feature-text">до 3 пользователей</span>
                         </li>
                         <li class="pricing__plan-feature">
                             <img src="./images/price/community.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24">
-                            <span class="pricing__plan-feature-text">Бесплатная возможность аудита</span>
+                            <span class="pricing__plan-feature-text">бесплатная возможность аудита</span>
                         </li>
                     </ul>
 
                     <div class="pricing__plan-footer">
                         <div class="pricing__plan-price">
                             <span class="pricing__plan-price-label">стоимость</span>
-                            <span class="pricing__plan-price-value">Бесплатно</span>
+                            <span class="pricing__plan-price-value">бесплатно</span>
                         </div>
-                        <a href="#download" class="pricing__plan-button button">Скачать</a>
+                        <a href="#download" class="pricing__plan-button button">запросить демо</a>
                     </div>
                 </div>
 
                 <!-- План Enterprise -->
                 <div class="pricing__plan pricing__plan--enterprise">
                     <div class="pricing__plan-header">
-                        <h3 class="pricing__plan-title">Enterprise</h3>
+                        <h3 class="pricing__plan-title">enterprise</h3>
                         <p class="pricing__plan-description">
-                            Протестируйте версию, в которой доступно создание одного процесса
+                            протестируйте версию, в которой доступно создание одного процесса
                         </p>
                     </div>
 
@@ -488,9 +570,9 @@
                     <div class="pricing__plan-footer">
                         <div class="pricing__plan-price">
                             <span class="pricing__plan-price-label">стоимость</span>
-                            <span class="pricing__plan-price-value">По запросу</span>
+                            <span class="pricing__plan-price-value">по запросу</span>
                         </div>
-                        <a href="#demo" class="pricing__plan-button button">Запросить демо</a>
+                        <a href="#demo" class="pricing__plan-button button">запросить демо</a>
                     </div>
                 </div>
             </div>
@@ -953,7 +1035,7 @@
 
             <div class="contact__form-wrapper">
                 <div class="contact__header">
-                    <span class="contact__badge">Первые результаты бесплатно</span>
+                    <span class="contact__badge">первые результаты бесплатно</span>
                     <h2 class="contact__title">бесплатно проведем аудит   <span class="contact__title-gray">  и предложим решение по автоматизации</span></h2>
                 </div>
 
@@ -963,11 +1045,11 @@
                         <input type="email" class="contact__input" placeholder="Ваша почта" name="email" required>
                         <input type="text" class="contact__input" placeholder="Название компании" name="company" required>
                     </div>
-                    <button type="submit" class="contact__submit button">Запросить аудит</button>
+                    <button type="submit" class="contact__submit button">запросить аудит</button>
                 </form>
 
                 <p class="contact__disclaimer">
-                    Нажимая кнопку «Запросить аудит» вы подтверждаете, что ознакомились с условиями
+                    нажимая кнопку «запросить аудит» вы подтверждаете, что ознакомились с условиями
                 </p>
             </div>
         </div>
@@ -983,7 +1065,7 @@
         <div class="footer__main">
             <div class="footer__links">
                 <a href="#docs" class="footer__link">
-                    <span class="footer__link-text">Документация для разработчиков</span>
+                    <span class="footer__link-text">документация для разработчиков</span>
                     <svg class="footer__link-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -1012,14 +1094,16 @@
         <div class="footer__bottom">
             <div class="footer__info">
                 <span class="footer__copyright">UNIBPM © 2025</span>
-                <a href="#privacy" class="footer__privacy">Политика конфиденциальности</a>
+                <a href="#privacy" class="footer__privacy">политика конфиденциальности</a>
             </div>
-            <span class="footer__credit">Дизайн — Solentica</span>
+            <a href="https://solentica.agency" class="footer__credit">Дизайн — Solentica</a>
         </div>
     </div>
 </footer>
 
 <script src="./scripts/header-scroll.js"></script>
+<script src="./scripts/burger-menu.js"></script>
+<script src="./scripts/lang-switcher.js"></script>
 <script src="./scripts/testimonials-slider.js"></script>
 <script src="./scripts/contact-animation.js"></script>
 <script src="./scripts/automation-accordion.js"></script>

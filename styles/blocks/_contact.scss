@@ -44,29 +44,30 @@
   display: inline-flex;
   padding: 6px 10px;
   background: rgba(110, 58, 255, 0.05);
+  border: 1px solid #B1ABFF;
   border-radius: var(--border-radius-large);
   font-family: 'Roboto Flex', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
   text-align: center;
   color: #6E3AFF;
-  z-index: 1; // важно
+  z-index: 1; 
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      padding: 1px; // толщина рамки
-      border-radius: inherit;
-      background: linear-gradient(90deg, #6E3AFF 0%, rgba(110, 58, 255, 0.55) 100%);
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-              mask-composite: exclude;
-      pointer-events: none;
-    }
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   inset: 0;
+    //   padding: 1px; // толщина рамки
+    //   border-radius: inherit;
+    //   background: linear-gradient(90deg, #6E3AFF 0%, rgba(110, 58, 255, 0.55) 100%);
+    //   -webkit-mask:
+    //     linear-gradient(#fff 0 0) content-box,
+    //     linear-gradient(#fff 0 0);
+    //   -webkit-mask-composite: xor;
+    //           mask-composite: exclude;
+    //   pointer-events: none;
+    // }
 
     @include mobile {
       font-size: 11px;
@@ -158,7 +159,7 @@
     border: none;
     border-radius: 40px;
     font-family: 'Roboto Flex', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
     line-height: 1.17;
     text-align: center;

@@ -34,15 +34,13 @@
     padding-bottom: 50px;
     min-height: 673px;
 
-    @include media.desktop {
-      min-height: 600px;
+    @include media.desktop-l {
+      min-height: 100vh;
       padding-top: 40px;
       padding-bottom: 40px;
     }
 
-    @include media.tablet {
-      min-height: 500px;
-    }
+  
 
     @include media.mobile {
       min-height: 941px;
@@ -65,9 +63,13 @@
     flex-direction: column;
     gap: 118px;
 
+    @include media.desktop-l{
+      max-width: 100%;
+      align-items: center;
+       gap: 24px;
+    }
     @include media.tablet {
-      max-width: 350px;
-      gap: 80px;
+      gap: 24px;
     }
 
     @include media.mobile {
@@ -167,7 +169,7 @@
     height: 60px;
     border-radius: 40px;
     font-family: var(--font-family-base);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
     line-height: 1.17;
     text-decoration: none;
@@ -229,12 +231,17 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    max-width: 166px;
+    max-width: 175px;
 
+    @include media.desktop-l {
+  
+      text-align: center;
+       align-items: center;
+    }
     @include media.mobile {
       max-width: 100%;
       flex-direction: row;
-      align-items: center;
+     text-align: left;
       gap: 12px;
     }
   }
@@ -284,9 +291,25 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(-36deg, rgba(147, 150, 255, 1) 44%, rgba(110, 58, 255, 1) 100%);
+   
+    background-image: url('../images/hero/bg-gradient-desctop.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     z-index: 1;
 
+    @include media.desktop-l {
+      background-image: url('../images/hero/bg-gradient.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+
+    }
+     @include media.mobile {
+       background: linear-gradient(-36deg, rgba(147, 150, 255, 1) 44%, rgba(110, 58, 255, 1) 100%);
+      }
+    
     &::before {
       content: '';
       position: absolute;
@@ -296,30 +319,52 @@
       width: 200%;
       height: 200%;
       background: radial-gradient(circle, rgba(255, 183, 211, 0.6) 0%, transparent 50%);
-      filter: blur(364px);
       z-index: 2;
       pointer-events: none;
 
-      @include media.mobile {
-        width: 300%;
-        height: 300%;
-        top: 40%;
-      }
+     
     }
   }
 
 
   &__bg-image {
     position: absolute;
-    width: 100%;
+    top: 20%;
+    right: 0;
     height: 100%;
     z-index: 3;
     object-fit: cover;
     pointer-events: none;
-    @include media.mobile {
+    @include media.desktop-l {
        @include mixins.visually-hidden();
 
 
+    } 
+    &__tablet-laptop{
+      overflow: hidden;
+    
+      @include media.desktop-l {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: auto;
+        z-index: 3;
+        object-fit: cover;
+        pointer-events: none;
+        bottom: -17%;
+        left: 40%;
+        transform: translateX(-50%);
+        @include mixins.responsive-image-width(70, 250, 1440, 760 );
+      }
+      @include media.desktop{
+         bottom: -10%;
+      }
+        @include media.desktop{
+         bottom: -6%;
+      }
+       @include media.mobile {
+        @include mixins.visually-hidden
+      }
     }
     &__mobile-laptop{
      overflow: hidden;

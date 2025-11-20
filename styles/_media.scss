@@ -1,3 +1,6 @@
+$desktop-l-above: 1441px;
+$desktop-l: 1440px;
+
 $desktop-above: 1281px;
 $desktop: 1280px;
 
@@ -9,6 +12,18 @@ $mobile: 767px;
 
 $mobile-s-above: 481px;
 $mobile-s: 480px;
+
+@mixin desktop-l-above {
+  @media (min-width: $desktop-l-above) {
+    @content;
+  }
+}
+
+@mixin desktop-l {
+  @media (max-width: $desktop-l) {
+    @content;
+  }
+}
 
 @mixin desktop-above {
   @media (min-width: $desktop-above) {

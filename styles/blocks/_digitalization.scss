@@ -16,8 +16,7 @@
   &__title {
     @include mixins.fluid-text(48, 28);
     font-weight: 500;
-    line-height: 0.9;
-    letter-spacing: -0.02em;
+    line-height: 1;
     text-align: center;
 
     color: var(--color-dark);
@@ -46,16 +45,23 @@
 
     @include media.tablet {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto;
+      grid-template-rows: 285px 356px 356px 436px;
       grid-column-gap: 16px;
       grid-row-gap: 16px;
     }
 
     @include media.mobile {
       grid-template-columns: 1fr;
+      grid-template-rows: 285px 460px 460px 460px 460px 460px;
       grid-column-gap: 0;
       grid-row-gap: 12px;
       padding: 0;
+    }
+
+      @include media.mobile-s {
+    
+      grid-template-rows:repeat(6, clamp(460px, 100vw, 480px));
+     
     }
   }
 
@@ -66,16 +72,14 @@
     overflow: hidden;
     border: 1px solid #FBFBFB;
 
-    @include media.tablet {
-      min-height: 465px;
-    }
+    
 
     @include media.mobile {
       padding: 32px 16px;
       border-radius: 17.36px;
       border-left: none;
       border-right: none;
-      min-height: 480px;
+      // min-height: 480px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -126,7 +130,7 @@
       }
      
       @include media.tablet {
-        grid-area: auto;
+        grid-area:  2 / 1 / 4 / 2;
          background: linear-gradient(360deg, rgba(147, 150, 255, 1) 30%, rgba(110, 58, 255, 1) 100%);
         
       }
@@ -146,7 +150,7 @@
       position: relative;
       justify-content: flex-start;
       @include media.tablet {
-                 
+        grid-column: 1 / -1;
       }
       &__bg{
         position: absolute;
@@ -154,14 +158,14 @@
         height: 100%;
         object-fit: cover;
         right: 0px;
-        bottom: 0px;
+        top: 0;
     
-        @include media.tablet {
+        @include media.mobile-s {
             @include mixins.visually-hidden;
              
          }
        &-mobile{
-          @include media.tablet {
+          @include media.mobile-s {
              @include mixins.visually-visible();
               position: absolute !important;
               width: 100% !important;
@@ -181,9 +185,7 @@
           }
         }
 
-      @include media.tablet {
-        grid-area: auto;
-      }
+     
 
       @include media.mobile {
         grid-area: auto;
@@ -212,7 +214,10 @@
         &-image{
          margin: 0 auto;
          width: 100%;
-       
+          
+          @include media.tablet {
+            max-width: 300px
+        }
         
           @include media.mobile {
             @include mixins.responsive-image-width(58, 250,767,460 );
@@ -282,7 +287,7 @@
         height: auto;
         object-fit: cover;
         right: 0px;
-        bottom: 0px;
+        bottom: 56px;
         z-index: 1;
         @include media.mobile {
           bottom: 20%;
@@ -352,9 +357,7 @@
     position: relative;
     z-index: 2;
 
-    @include media.tablet {
-        margin: 0 auto;
-      }
+    
   }
 
   &__card-title {
@@ -381,15 +384,16 @@
       background-clip: text;
       max-width: 380px;
 
-      @include media.tablet {
+      @include media.mobile-s {
           text-align: center;
+          margin: 0 auto;
       }
-     
+
     }
 
     .digitalization__card--bpmn & {
       color: #6FADEE;
-      
+      max-width: 400px;
        @include media.tablet{
         text-align: center;
       }
@@ -427,7 +431,7 @@
 
   &__card-description {
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 1.2;
     margin: 0;
 
     .digitalization__card--automation & {
@@ -440,14 +444,12 @@
       color: rgba(255, 255, 255, 0.6);
       text-align: left;
       max-width: 383px;
-      
-      @include media.mobile {
-          text-align: center;
-      }
+
     }
 
     .digitalization__card--bpmn & {
       color: #6FADEE;
+      max-width: 400px;
       @include media.tablet {
           text-align: center;
       }
@@ -472,6 +474,7 @@
       color: var(--color-light);
       line-height: 1;
       z-index: 4;
+      max-width: 280px;
     }
   }
 

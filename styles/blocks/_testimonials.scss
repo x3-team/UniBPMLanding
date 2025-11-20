@@ -21,7 +21,7 @@
     text-align: center;
     text-transform: lowercase;
     color: var(--color-dark);
-    max-width: 760px;
+    max-width: 514px;
     @include tablet {
       margin-bottom: 56px;
     }
@@ -59,7 +59,7 @@
     justify-content: space-between;
     min-height: 544px;
     padding: 30px;
-    background: #F5F5F5;
+    background: #EEEEEE;
     border-radius: var(--border-radius);
 
     @include tablet {
@@ -78,9 +78,8 @@
   &__text {
     margin: 0 0 auto;
     font-family: 'Roboto Flex', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 32px;
-    line-height: 1.1;
     text-transform: lowercase;
     color: var(--color-dark);
 
@@ -124,7 +123,7 @@
 
   &__name {
     font-family: 'Roboto Flex', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 24px;
     line-height: 1.17;
     color: var(--color-dark);
@@ -136,7 +135,7 @@
 
   &__company {
     font-family: 'Roboto Flex', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 18px;
     line-height: 1.17;
     color: var(--color-dark);

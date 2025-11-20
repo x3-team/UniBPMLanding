@@ -5,7 +5,19 @@ body {
   @include mixins.fluid-text(18, 16);
 
   font-family: var(--font-family-base);
-  font-weight: 400;
+  font-variation-settings:
+    'GRAD' 62,
+    'XOPQ' 96,
+    'XTRA' 513,
+    'YOPQ' 90,
+    'YTAS' 727,
+    'YTDE' -203,
+    'YTFI' 738,
+    'YTLC' 514,
+    'YTUC' 658,
+    'slnt' 0,
+    'wdth' 86;
+  font-weight: 500;
   line-height: 1.28;
   color: var(--color-dark);
   background-color: var(--color-light);

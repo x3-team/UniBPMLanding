@@ -42,8 +42,10 @@
     align-items: flex-end;
     gap: 23px;
     width: 100%;
-    max-width: 1114px;
 
+    @include desktop {
+      gap: 0;
+    }
     @include tablet {
       flex-direction: column;
       align-items: center;
@@ -57,9 +59,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 320px;
+    margin: 30px 24px;
     flex-shrink: 0;
-
+      max-width: 320px;
+    @include desktop {
+      margin: 30px 12px;
+    }
     @include tablet {
       width: 100%;
       max-width: 500px;
@@ -86,11 +91,9 @@
 
   &__step-image {
     margin-bottom: 24px;
-     &:first-child{
-         margin-bottom: 0;
-      }
+   
     @include mobile {
-      margin-bottom: 16px;
+      margin-bottom: 12px;
 
      
     }
@@ -100,14 +103,9 @@
     display: block;
     width: auto;
     height: auto;
-    max-width: 220px;
-    max-height: 240px;
+   
 
-    &:first-child{
-      max-width: 260px;
-      top: -21px;
-      position: relative;
-    }
+  
 
     @include mobile {
       max-height: 240px;
@@ -117,7 +115,7 @@
   &__step-title {
     margin: 0 0 12px 0;
     font-family: 'Roboto Flex', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     @include fluid-text(24, 20);
     line-height: 1;
     text-align: center;
@@ -127,17 +125,21 @@
       font-size: 20px;
       line-height: 1.1;
     }
+    &-gray{
+       color: #ADADAD;
+      
+    }
   }
 
   &__step-description {
     margin: 0;
     font-family: 'Roboto Flex', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 16px;
     line-height: 1.2;
     text-align: center;
-    color: var(--color-dark);
-    opacity: 0.5;
+    color:#737373;
+   
 
     @include mobile {
       font-size: 14px;
