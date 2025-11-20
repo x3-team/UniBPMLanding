@@ -1797,7 +1797,6 @@ section {
 .digitalization__card--scale .digitalization__card-title {
   color: var(--color-light);
   text-align: center;
-  margin-top: 16px;
   margin-bottom: 20px;
 }
 @media (max-width: 1023px) {
