@@ -61,7 +61,7 @@
     max-width: 606px;
     display: flex;
     flex-direction: column;
-    gap: 118px;
+    gap: 94px;
 
     @include media.desktop-l{
       max-width: 100%;
@@ -215,7 +215,7 @@
     display: flex;
     align-items: center;
     gap: 32px;
-
+    margin-top: 24px;
     @include media.tablet {
       gap: 24px;
     }
@@ -328,7 +328,6 @@
     width: 100%;
     height: 100%;
     right: 0;
-    height: auto;
     z-index: 3;
     object-fit: cover;
     pointer-events: none;
