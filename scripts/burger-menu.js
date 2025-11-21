@@ -11,7 +11,7 @@
   const mobileMenu = document.querySelector('.header__mobile-menu');
   const mobileMenuOverlay = document.querySelector('.header__mobile-menu-overlay');
   const mobileMenuClose = document.querySelector('.header__mobile-menu-close');
-  const mobileMenuLinks = document.querySelectorAll('.header__mobile-menu-link');
+  const mobileMenuLinks = document.querySelectorAll('.header__mobile-menu-link, .header__mobile-menu-cta, .header__mobile-menu-download');
 
   // Check if elements exist
   if (!burgerButton || !mobileMenu) {
