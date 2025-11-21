@@ -103,7 +103,7 @@
     color: var(--color-light);
     font-family: var(--font-family-base);
     font-weight: 500;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.17;
     width: fit-content;
 
@@ -123,10 +123,9 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     max-width: 475px;
-
+    line-height: 1;
     @include media.mobile {
       max-width: 100%;
-      line-height: 1;
     }
   }
 

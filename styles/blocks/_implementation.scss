@@ -21,6 +21,7 @@
     @include fluid-text(48, 28);
     text-align: center;
     text-transform: lowercase;
+    line-height: 1;
     color: var(--color-dark);
 
     @include tablet {
@@ -124,7 +125,7 @@
       line-height: 1.1;
     }
     &-gray{
-       color: #595959;
+       color: #ADADAD;
 
     }
   }
