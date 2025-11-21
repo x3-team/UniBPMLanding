@@ -11,13 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // Массив с путями к картинкам для каждого пункта
   // Замените task-1.png, task-2.png и т.д. на свои уникальные картинки
   const images = {
-    '1': './images/automation-tasks/task-1.png',
-    '2': './images/automation-tasks/task-2.png',
-    '3': './images/automation-tasks/task-3.png',
-    '4': './images/automation-tasks/task-4.png',
-    '5': './images/automation-tasks/task-5.png',
-    '6': './images/automation-tasks/task-6.png'
+    '1': './images/automation-tasks/task-1.webp',
+    '2': './images/automation-tasks/task-2.webp',
+    '3': './images/automation-tasks/task-3.webp',
+    '4': './images/automation-tasks/task-4.webp',
+    '5': './images/automation-tasks/task-5.webp',
+    '6': './images/automation-tasks/task-6.webp'
   };
+
+  // Инициализация начального изображения
+  const activeItem = document.querySelector('.automation-tasks__item--active [data-accordion-trigger]');
+  if (accordionImage && activeItem) {
+    const imageId = activeItem.dataset.image;
+    if (imageId && images[imageId]) {
+      accordionImage.src = images[imageId];
+    }
+  }
 
   accordionTriggers.forEach((trigger) => {
     trigger.addEventListener('click', () => {

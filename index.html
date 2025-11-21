@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
-        rel="stylesheet">
+    <link rel="preload" href="./images/hero/bg.webp" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet"></noscript>
     <title>UniBPM</title>
 </head>
 <body>
@@ -179,9 +179,9 @@
             </div>
             <div class="hero__background">
                 <div class="hero__bg-gradient"></div>
-                <img src="./images/hero/bg.png" alt="" class="hero__bg-image ">
-                <img src="./images/hero/bg-tablet.png" alt="" class="hero__bg-image__tablet-laptop ">
-                <img src="./images/hero/laptop.png" alt="" class="hero__bg-image__mobile-laptop ">
+                <img src="./images/hero/bg.webp" alt="" class="hero__bg-image " fetchpriority="high">
+                <img src="./images/hero/bg-tablet.webp" alt="" class="hero__bg-image__tablet-laptop ">
+                <img src="./images/hero/laptop.webp" alt="" class="hero__bg-image__mobile-laptop ">
             </div>
         </div>
     </section>
@@ -200,11 +200,11 @@
                         </p>
                     </div>
                     <div class="digitalization__card--integration__bg">
-                        <img src="./images/digitalization/integration-bg.svg" alt="" class="digitalization__card--integration__bg-image">
+                        <img src="./images/digitalization/integration-bg.svg" alt="" class="digitalization__card--integration__bg-image" loading="lazy">
                     </div>
                     <div class="digitalization__card--integration__bg-mobile visually-hidden ">
-                        <img src="./images/digitalization/mobile/integration-bg.png" alt=""
-                            class="digitalization__card--integration__bg-image-mobile">
+                        <img src="./images/digitalization/mobile/integration-bg.webp" alt=""
+                            class="digitalization__card--integration__bg-image-mobile" loading="lazy">
                     </div>
                 </div>
 
@@ -218,10 +218,10 @@
 
                     </div>
                     <div class="digitalization__card--automation__bg">
-                        <img src="./images/digitalization/automation.svg" alt="" class="digitalization__card--automation__bg-image">
+                        <img src="./images/digitalization/automation.svg" alt="" class="digitalization__card--automation__bg-image" loading="lazy">
                     </div>
                     <div class="digitalization__card--automation__bg-mobile visually-hidden ">
-                        <img src="./images/digitalization/mobile/autimation-bg.svg" alt="" class="digitalization__card--automation__bg-image-mobile">
+                        <img src="./images/digitalization/mobile/autimation-bg.svg" alt="" class="digitalization__card--automation__bg-image-mobile" loading="lazy">
                     </div>
 
                 </div>
@@ -233,7 +233,7 @@
                         сотрудники экономят до 40% времени за счет алгоритма
                     </p>
                     <div class="digitalization__card--roles__bg">
-                        <img src="./images/digitalization/roles-bg.png" alt="" class="digitalization__card--roles__bg-image">
+                        <img src="./images/digitalization/roles-bg.webp" alt="" class="digitalization__card--roles__bg-image" loading="lazy">
                     </div>
                 </div>
 
@@ -246,7 +246,7 @@
                         </p>
                     </div>
                     <div class="digitalization__card--processes__bg">
-                        <img src="./images/digitalization/process-bg.svg" alt="" class="digitalization__card--processes__bg-image">
+                        <img src="./images/digitalization/process-bg.svg" alt="" class="digitalization__card--processes__bg-image" loading="lazy">
                     </div>
                 </div>
 
@@ -263,7 +263,7 @@
                         </p>
                     </div>
                     <div class="digitalization__card--bpmn__bg">
-                        <img src="./images/digitalization/bpmn-bg.svg" alt="" class="digitalization__card--bpmn__bg-image">
+                        <img src="./images/digitalization/bpmn-bg.svg" alt="" class="digitalization__card--bpmn__bg-image" loading="lazy">
                     </div>
                 </div>
                 <!-- Карточка 6: Масштабируемся на тысячи процессов -->
@@ -273,7 +273,7 @@
                         сотрудники экономят до 40% времени за счет алгоритма, который сделает за них всю рутину — останется только принять результат
                     </p>
                     <div class="digitalization__card--scale__bg">
-                        <img src="./images/digitalization/scale-bg.svg" alt="" class="digitalization__card--scale__bg-image">
+                        <img src="./images/digitalization/scale-bg.svg" alt="" class="digitalization__card--scale__bg-image" loading="lazy">
                     </div>
                 </div>
 
@@ -383,7 +383,7 @@
                 <!-- Шаг 1 -->
                 <div class="implementation__step">
                     <div class="implementation__step-image ">
-                        <img src="./images/implementation/step-1.svg" alt="" width="220" height="303" class="implementation__step-img">
+                        <img src="./images/implementation/step-1.svg" alt="" width="220" height="303" class="implementation__step-img" loading="lazy">
                     </div>
                     <h3 class="implementation__step-title">проведем аудит процессов <span  class="implementation__step-title-gray"> <br> и подскажем, что можно автоматизировать</span> </h3>
                     <p class="implementation__step-description">
@@ -394,7 +394,7 @@
                 <!-- Шаг 2 -->
                 <div class="implementation__step ">
                     <div class="implementation__step-image">
-                        <img src="./images/implementation/step-2.svg" alt="" width="232" height="303" class="implementation__step-img">
+                        <img src="./images/implementation/step-2.svg" alt="" width="232" height="303" class="implementation__step-img" loading="lazy">
                     </div>
                     <h3 class="implementation__step-title">подготовим техническую базу <span class="implementation__step-title-gray">на основе ваших решений</span></h3>
                     <p class="implementation__step-description">
@@ -405,7 +405,7 @@
                 <!-- Шаг 3 -->
                 <div class="implementation__step ">
                     <div class="implementation__step-image">
-                        <img src="./images/implementation/step-3.svg" alt="" width="227" height="303" class="implementation__step-img">
+                        <img src="./images/implementation/step-3.svg" alt="" width="227" height="303" class="implementation__step-img" loading="lazy">
                     </div>
                     <h3 class="implementation__step-title">внедрим решение <span class="implementation__step-title-gray">и обучим сотрудников работе с инструментом</span> </h3>
                     <p class="implementation__step-description">
@@ -428,8 +428,8 @@
                             мы полностью автоматизировали HR-процесс, теперь скорим кандидатов на 30% быстрее
                         </p>
                         <div class="testimonials__author">
-                            <img src="./images/testimonials/avatar.png" alt="" class="testimonials__avatar" width="54"
-                                height="66">
+                            <img src="./images/testimonials/avatar.webp" alt="" class="testimonials__avatar" width="54"
+                                height="66" loading="lazy">
                             <div class="testimonials__info">
                                 <div class="testimonials__name">виктор королёв</div>
                                 <div class="testimonials__company">яндекс</div>
@@ -443,8 +443,8 @@
                             мы полностью автоматизировали HR-процесс, теперь скорим кандидатов на 30% быстрее
                         </p>
                         <div class="testimonials__author">
-                            <img src="./images/testimonials/avatar.png" alt="" class="testimonials__avatar" width="54"
-                                height="66">
+                            <img src="./images/testimonials/avatar.webp" alt="" class="testimonials__avatar" width="54"
+                                height="66" loading="lazy">
                             <div class="testimonials__info">
                                 <div class="testimonials__name">виктор королёв</div>
                                 <div class="testimonials__company">сбер</div>
@@ -458,8 +458,8 @@
                             мы полностью автоматизировали HR-процесс, теперь скорим кандидатов на 30% быстрее
                         </p>
                         <div class="testimonials__author">
-                            <img src="./images/testimonials/avatar.png" alt="" class="testimonials__avatar" width="54"
-                                height="66">
+                            <img src="./images/testimonials/avatar.webp" alt="" class="testimonials__avatar" width="54"
+                                height="66" loading="lazy">
                             <div class="testimonials__info">
                                 <div class="testimonials__name">виктор королёв</div>
                                 <div class="testimonials__company">авито</div>
@@ -471,7 +471,7 @@
                             мы полностью автоматизировали HR-процесс, теперь скорим кандидатов на 30% быстрее
                         </p>
                         <div class="testimonials__author">
-                            <img src="./images/testimonials/avatar.png" alt="" class="testimonials__avatar" width="54" height="66">
+                            <img src="./images/testimonials/avatar.webp" alt="" class="testimonials__avatar" width="54" height="66" loading="lazy">
                             <div class="testimonials__info">
                                 <div class="testimonials__name">виктор королёв</div>
                                 <div class="testimonials__company">авито</div>
@@ -517,19 +517,19 @@
 
                     <ul class="pricing__plan-features">
                         <li class="pricing__plan-feature">
-                            <img src="./images/price/community.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24">
+                            <img src="./images/price/community.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24" loading="lazy">
                             <span class="pricing__plan-feature-text">автоматизация 1 процесса</span>
                         </li>
                         <li class="pricing__plan-feature">
-                            <img src="./images/price/community.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24">
+                            <img src="./images/price/community.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24" loading="lazy">
                             <span class="pricing__plan-feature-text">локальный интерфейс</span>
                         </li>
                         <li class="pricing__plan-feature">
-                            <img src="./images/price/community.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24">
+                            <img src="./images/price/community.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24" loading="lazy">
                             <span class="pricing__plan-feature-text">до 3 пользователей</span>
                         </li>
                         <li class="pricing__plan-feature">
-                            <img src="./images/price/community.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24">
+                            <img src="./images/price/community.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24" loading="lazy">
                             <span class="pricing__plan-feature-text">бесплатная возможность аудита</span>
                         </li>
                     </ul>
@@ -554,19 +554,19 @@
 
                     <ul class="pricing__plan-features">
                         <li class="pricing__plan-feature">
-                            <img src="./images/price/enterprise.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24">
+                            <img src="./images/price/enterprise.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24" loading="lazy">
                             <span class="pricing__plan-feature-text">автоматизируйте целые отделы</span>
                         </li>
                         <li class="pricing__plan-feature">
-                            <img src="./images/price/enterprise.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24">
+                            <img src="./images/price/enterprise.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24" loading="lazy">
                             <span class="pricing__plan-feature-text">поможем с интеграцией</span>
                         </li>
                         <li class="pricing__plan-feature">
-                            <img src="./images/price/enterprise.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24">
+                            <img src="./images/price/enterprise.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24" loading="lazy">
                             <span class="pricing__plan-feature-text">до 1000 пользователей</span>
                         </li>
                         <li class="pricing__plan-feature">
-                            <img src="./images/price/enterprise.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24">
+                            <img src="./images/price/enterprise.svg" alt="" class="pricing__plan-feature-icon" width="24" height="24" loading="lazy">
                             <span class="pricing__plan-feature-text">проведём аудит бесплатно</span>
                         </li>
                     </ul>
@@ -1097,7 +1097,7 @@
                 <span class="footer__copyright">UNIBPM © 2025</span>
                 <a href="#privacy" class="footer__privacy">политика конфиденциальности</a>
             </div>
-            <span class="footer__credit"> сайт сделан в 
+            <span class="footer__credit"> сделан в 
                   <a href="https://solentica.agency" >Solentica</a>
             </span>
           
@@ -1105,11 +1105,11 @@
     </div>
 </footer>
 
-<script src="./scripts/header-scroll.js"></script>
-<script src="./scripts/burger-menu.js"></script>
-<script src="./scripts/lang-switcher.js"></script>
-<script src="./scripts/testimonials-slider.js"></script>
-<script src="./scripts/contact-animation.js"></script>
-<script src="./scripts/automation-accordion.js"></script>
+<script src="./scripts/header-scroll.js" defer></script>
+<script src="./scripts/burger-menu.js" defer></script>
+<script src="./scripts/lang-switcher.js" defer></script>
+<script src="./scripts/testimonials-slider.js" defer></script>
+<script src="./scripts/contact-animation.js" defer></script>
+<script src="./scripts/automation-accordion.js" defer></script>
 </body>
 </html>

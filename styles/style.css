@@ -1049,7 +1049,6 @@ section {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
-  width: -moz-fit-content;
   width: fit-content;
 }
 @media (max-width: 767px) {
@@ -1062,8 +1061,6 @@ section {
   font-family: var(--font-family-base);
   font-weight: 500;
   font-size: clamp(28px, 3.3333333333vw, 48px);
-  line-height: 0.8;
-  letter-spacing: -0.02em;
   text-transform: lowercase;
   background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.8) 100%);
   -webkit-background-clip: text;
@@ -1286,8 +1283,7 @@ section {
   height: 100%;
   right: 0;
   z-index: 3;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   pointer-events: none;
 }
 @media (max-width: 1440px) {
@@ -1314,8 +1310,7 @@ section {
     width: 100%;
     height: auto;
     z-index: 3;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     pointer-events: none;
     bottom: -17%;
     left: 40%;
@@ -1357,8 +1352,7 @@ section {
     width: 100%;
     height: auto;
     z-index: 3;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     pointer-events: none;
     bottom: -200px;
   }
@@ -1381,7 +1375,6 @@ section {
 .digitalization__title {
   font-size: clamp(28px, 3.3333333333vw, 48px);
   font-weight: 500;
-  line-height: 1;
   text-align: center;
   color: var(--color-dark);
   max-width: 660px;
@@ -1458,8 +1451,7 @@ section {
   bottom: 0;
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   right: 0px;
 }
 .digitalization__card--automation__bg-image {
@@ -1529,8 +1521,7 @@ section {
   position: absolute;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   right: -30%;
   top: 0;
 }
@@ -1599,8 +1590,7 @@ section {
   position: absolute;
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   right: 0px;
   bottom: 0px;
   z-index: 2;
@@ -1638,8 +1628,7 @@ section {
   position: absolute;
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   right: 0px;
   bottom: -10px;
   z-index: 1;
@@ -1676,8 +1665,7 @@ section {
   position: absolute;
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   right: 0px;
   bottom: 56px;
   z-index: 1;
@@ -1715,8 +1703,7 @@ section {
   position: absolute;
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   right: 0px;
   bottom: 0px;
   z-index: 1;
@@ -1823,13 +1810,13 @@ section {
   font-weight: 400;
 }
 .digitalization__card--automation .digitalization__card-description {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.85);
   text-align: center;
   max-width: 383px;
   margin: 0 auto;
 }
 .digitalization__card--integration .digitalization__card-description {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.85);
   text-align: left;
   max-width: 383px;
 }
@@ -1857,7 +1844,7 @@ section {
   }
 }
 .digitalization__card--scale .digitalization__card-description {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
   text-align: center;
   max-width: 372px;
 }
@@ -1895,8 +1882,6 @@ section {
   font-family: "Roboto Flex", sans-serif;
   font-weight: 500;
   font-size: clamp(28px, 3.3333333333vw, 48px);
-  line-height: 0.8;
-  letter-spacing: -0.02em;
   text-align: center;
   color: var(--color-dark);
 }
@@ -1978,7 +1963,7 @@ section {
   font-weight: 500;
   font-size: clamp(18px, 1.6666666667vw, 24px);
   line-height: 0.9;
-  color: #ADADAD;
+  color: #767676;
   transition: color var(--transition-duration);
   transition: all 0.2s ease;
 }
@@ -2070,8 +2055,6 @@ section {
   font-family: "Roboto Flex", sans-serif;
   font-weight: 500;
   font-size: clamp(28px, 3.3333333333vw, 48px);
-  line-height: 0.8;
-  letter-spacing: -0.02em;
   text-align: center;
   text-transform: lowercase;
   color: var(--color-dark);
@@ -2180,7 +2163,7 @@ section {
   }
 }
 .implementation__step-title-gray {
-  color: #ADADAD;
+  color: #595959;
 }
 .implementation__step-description {
   margin: 0;
@@ -2189,7 +2172,7 @@ section {
   font-size: 16px;
   line-height: 1.2;
   text-align: center;
-  color: #737373;
+  color: #595959;
 }
 @media (max-width: 767px) {
   .implementation__step-description {
@@ -2251,8 +2234,6 @@ section {
   font-family: "Roboto Flex", sans-serif;
   font-weight: 500;
   font-size: clamp(28px, 3.3333333333vw, 48px);
-  line-height: 0.8;
-  letter-spacing: -0.02em;
   text-align: center;
   text-transform: lowercase;
   color: var(--color-light);
@@ -2546,8 +2527,6 @@ section {
   font-family: "Roboto Flex", sans-serif;
   font-weight: 500;
   font-size: clamp(28px, 3.3333333333vw, 48px);
-  line-height: 0.8;
-  letter-spacing: -0.02em;
   text-align: center;
   text-transform: lowercase;
   color: var(--color-dark);
@@ -2701,8 +2680,7 @@ section {
   flex-shrink: 0;
   width: 54px;
   height: 66px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media (max-width: 767px) {
   .testimonials__avatar {
@@ -2876,7 +2854,7 @@ section {
   }
 }
 .contact__title-gray {
-  color: #A3A3A3;
+  color: #595959;
 }
 .contact__form {
   display: flex;
@@ -2918,9 +2896,6 @@ section {
     padding: 14px 12px;
     font-size: 14px;
   }
-}
-.contact__input::-moz-placeholder {
-  color: rgba(158, 158, 158, 0.5);
 }
 .contact__input::placeholder {
   color: rgba(158, 158, 158, 0.5);
@@ -2968,8 +2943,7 @@ section {
   font-size: 12px;
   line-height: 1.2;
   text-align: center;
-  color: #6B6B6B;
-  opacity: 0.4;
+  color: #595959;
 }
 @media (max-width: 767px) {
   .contact__disclaimer {
@@ -3294,8 +3268,7 @@ section {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.17;
-  color: #2B2B2B;
-  opacity: 0.3;
+  color: #767676;
 }
 @media (max-width: 767px) {
   .footer__copyright {
@@ -3307,10 +3280,9 @@ section {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.17;
-  color: #2B2B2B;
-  opacity: 0.4;
+  color: #595959;
   text-decoration: none;
-  transition: opacity var(--transition-duration);
+  transition: color var(--transition-duration);
 }
 @media (max-width: 767px) {
   .footer__privacy {
@@ -3318,18 +3290,19 @@ section {
   }
 }
 .footer__privacy:hover {
-  opacity: 0.7;
+  color: #2B2B2B;
 }
 .footer__credit {
   font-family: "Roboto Flex", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.17;
-  color: #2B2B2B;
-  opacity: 0.4;
+  color: #595959;
 }
 @media (max-width: 767px) {
   .footer__credit {
     font-size: 14px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

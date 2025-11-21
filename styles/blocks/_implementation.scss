@@ -19,8 +19,6 @@
     font-family: 'Roboto Flex', sans-serif;
     font-weight: 500;
     @include fluid-text(48, 28);
-    line-height: 0.8;
-    letter-spacing: -0.02em;
     text-align: center;
     text-transform: lowercase;
     color: var(--color-dark);
@@ -126,8 +124,8 @@
       line-height: 1.1;
     }
     &-gray{
-       color: #ADADAD;
-      
+       color: #595959;
+
     }
   }
 
@@ -138,7 +136,7 @@
     font-size: 16px;
     line-height: 1.2;
     text-align: center;
-    color:#737373;
+    color:#595959;
    
 
     @include mobile {

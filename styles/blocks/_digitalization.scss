@@ -16,7 +16,6 @@
   &__title {
     @include mixins.fluid-text(48, 28);
     font-weight: 500;
-    line-height: 1;
     text-align: center;
 
     color: var(--color-dark);
@@ -446,13 +445,13 @@
     font-weight: 400;
 
     .digitalization__card--automation & {
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.85);
       text-align: center;
       max-width: 383px;
       margin: 0 auto;
     }
     .digitalization__card--integration & {
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.85);
       text-align: left;
       max-width: 383px;
         @include media.mobile-s {
@@ -477,7 +476,7 @@
     }
 
     .digitalization__card--scale & {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.85);
       text-align: center;
       max-width: 372px;
     }

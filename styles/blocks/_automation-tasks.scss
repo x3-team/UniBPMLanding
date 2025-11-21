@@ -26,8 +26,6 @@
     font-family: 'Roboto Flex', sans-serif;
     font-weight: 500;
     @include fluid-text(48, 28);
-    line-height: 0.8;
-    letter-spacing: -0.02em;
     text-align: center;
   
     color: var(--color-dark);
@@ -117,7 +115,7 @@
     font-weight: 500;
     @include fluid-text(24, 18);
     line-height: 0.9;
-    color: #ADADAD;
+    color: #767676;
     transition: color var(--transition-duration);
     transition: all .2s ease;
     @include hover {
