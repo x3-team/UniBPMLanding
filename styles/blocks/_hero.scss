@@ -38,7 +38,11 @@
       padding-top: 40px;
       padding-bottom: 40px;
     }
-
+      @include media.tablet{
+      min-height: 81vh;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
   
 
     @include media.mobile {

@@ -978,6 +978,13 @@ section {
     padding-bottom: 40px;
   }
 }
+@media (max-width: 1023px) {
+  .hero__container {
+    min-height: 81vh;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
 @media (max-width: 767px) {
   .hero__container {
     min-height: 941px;
