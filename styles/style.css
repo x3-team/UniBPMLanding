@@ -973,14 +973,13 @@ section {
 }
 @media (max-width: 1440px) {
   .hero__container {
-    min-height: 100vh;
+    min-height: 1100px;
     padding-top: 40px;
     padding-bottom: 40px;
   }
 }
 @media (max-width: 1023px) {
   .hero__container {
-    min-height: 81vh;
     padding-top: 40px;
     padding-bottom: 40px;
   }
